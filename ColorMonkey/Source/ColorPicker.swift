@@ -15,7 +15,7 @@ open class ColorPicker: UIView, UIPickerViewDataSource, UIPickerViewDelegate {
     
     // MARK:    Inspectables...
     
-    @IBInspectable open var isHexadecimal: Bool = true
+    @IBInspectable open var showHexadecimal: Bool = true
     
     
     // MARK:    Fields...
@@ -28,19 +28,19 @@ open class ColorPicker: UIView, UIPickerViewDataSource, UIPickerViewDelegate {
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
-        view = loadViewFromNib() as! ColorPickerView
+        view = initialiseFromNib() as! ColorPickerView
     }
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
         
-        view = loadViewFromNib() as! ColorPickerView
+        view = initialiseFromNib() as! ColorPickerView
     }
     
     public convenience init() {
         self.init(frame: CGRect(x: 0.0, y: 0.0, width: 10.0, height: 10.0))
         
-        view = loadViewFromNib() as! ColorPickerView
+        view = initialiseFromNib() as! ColorPickerView
     }
 
 
@@ -49,9 +49,8 @@ open class ColorPicker: UIView, UIPickerViewDataSource, UIPickerViewDelegate {
     open override func layoutSubviews() {
         super.layoutSubviews()
         
-        //view.frame = CGRect(x: 0.0, y: 0.0, width: frame.width, height: frame.height)
-        view.frame = CGRect(x: 0.0, y: 0.0, width: 21.0, height: 21.0)
-        view.debug(.yellow)
+        view.frame = CGRect(x: 0.0, y: 0.0, width: frame.width, height: frame.height)
+        view.backgroundColor = backgroundColor
     }
     
     
@@ -69,6 +68,6 @@ open class ColorPicker: UIView, UIPickerViewDataSource, UIPickerViewDelegate {
     // MARK:    'UIPickerDelegate'...
     
     open func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return "\(row)"
+        return showHexadecimal ? String(format:"%02X", row) : "\(row)"
     }
 }
