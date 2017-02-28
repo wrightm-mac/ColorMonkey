@@ -9,8 +9,10 @@
 import UIKit
 
 
-class MainViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+class MainViewController: UIViewController {
 
+    @IBOutlet weak var colorView: UIView!
+    
     
     // MARK:    Overrides...
     
@@ -19,21 +21,12 @@ class MainViewController: UIViewController, UIPickerViewDataSource, UIPickerView
     }
     
     
-    // MARK:    'UIPickerDatasource'...
+    // MARK:    Events...
     
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return 256
-    }
-    
-    
-    // MARK:    'UIPickerDelegate'...
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return "\(row)"
+    @IBAction func colorValueChanged(_ sender: ColorPicker) {
+        //print("\(#function) selectedColor='\(sender.selectedColor)'")
+        
+        colorView.backgroundColor = sender.selectedColor
     }
 }
 

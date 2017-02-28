@@ -10,12 +10,14 @@ import UIKit
 
 
 @IBDesignable
-open class ColorPicker: UIView, UIPickerViewDataSource, UIPickerViewDelegate {
+open class ColorPicker: UIControl, UIPickerViewDataSource, UIPickerViewDelegate {
 
     
     // MARK:    Inspectables...
     
     @IBInspectable open var showHexadecimal: Bool = true
+    
+    @IBInspectable open var selectedColor: UIColor = .black
     
     
     // MARK:    Fields...
@@ -70,5 +72,13 @@ open class ColorPicker: UIView, UIPickerViewDataSource, UIPickerViewDelegate {
     
     open func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return showHexadecimal ? String(format:"%02X", row) : "\(row)"
+    }
+    
+    open func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        selectedColor = UIColor.create(red: UInt8(view.redPicker.selectedRow(inComponent: 0)),
+                                       green: UInt8(view.greenPicker.selectedRow(inComponent: 0)),
+                                       blue: UInt8(view.bluePicker.selectedRow(inComponent: 0)))
+        
+        sendActions(for: .valueChanged)
     }
 }
