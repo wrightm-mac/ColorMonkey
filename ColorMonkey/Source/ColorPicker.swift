@@ -19,6 +19,8 @@ open class ColorPicker: UIControl, UIPickerViewDataSource, UIPickerViewDelegate 
     
     @IBInspectable open var selectedColor: UIColor = .black
     
+    @IBInspectable open var animateSelection: Bool = true
+    
     
     // MARK:    Fields...
     
@@ -54,6 +56,12 @@ open class ColorPicker: UIControl, UIPickerViewDataSource, UIPickerViewDelegate 
         view.frame = CGRect(x: 0.0, y: 0.0, width: frame.width, height: frame.height)
         view.backgroundColor = backgroundColor
         view.applyBorder(cornerSize: .medium, width: .medium, color: .black)
+        
+        if let rgb = selectedColor.uint8 {
+            view.redPicker.selectRow(Int(rgb.red), inComponent: 0, animated: animateSelection)
+            view.greenPicker.selectRow(Int(rgb.green), inComponent: 0, animated: animateSelection)
+            view.bluePicker.selectRow(Int(rgb.blue), inComponent: 0, animated: animateSelection)
+        }
     }
     
     

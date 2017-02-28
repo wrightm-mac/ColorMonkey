@@ -17,6 +17,8 @@
 		24BD63451E65A3EA008454B0 /* ColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BD63441E65A3EA008454B0 /* ColorPicker.swift */; };
 		24BD63471E65A49D008454B0 /* ColorPicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24BD63461E65A49D008454B0 /* ColorPicker.xib */; };
 		24BD63491E65A4CA008454B0 /* ColorPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BD63481E65A4CA008454B0 /* ColorPickerView.swift */; };
+		24BD634B1E65BE35008454B0 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BD634A1E65BE35008454B0 /* StringExtensions.swift */; };
+		24BD634D1E65BEFA008454B0 /* UInt8Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BD634C1E65BEFA008454B0 /* UInt8Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		24BD63441E65A3EA008454B0 /* ColorPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorPicker.swift; path = Source/ColorPicker.swift; sourceTree = "<group>"; };
 		24BD63461E65A49D008454B0 /* ColorPicker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ColorPicker.xib; path = Source/ColorPicker.xib; sourceTree = "<group>"; };
 		24BD63481E65A4CA008454B0 /* ColorPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorPickerView.swift; path = Source/ColorPickerView.swift; sourceTree = "<group>"; };
+		24BD634A1E65BE35008454B0 /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringExtensions.swift; path = Source/StringExtensions.swift; sourceTree = "<group>"; };
+		24BD634C1E65BEFA008454B0 /* UInt8Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UInt8Extensions.swift; path = Source/UInt8Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,8 +117,10 @@
 		24BD633F1E65A243008454B0 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				24BD63401E65A261008454B0 /* UIViewExtensions.swift */,
+				24BD634A1E65BE35008454B0 /* StringExtensions.swift */,
+				24BD634C1E65BEFA008454B0 /* UInt8Extensions.swift */,
 				24BD63421E65A2B7008454B0 /* UIColorExtensions.swift */,
+				24BD63401E65A261008454B0 /* UIViewExtensions.swift */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -193,7 +199,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24BD634D1E65BEFA008454B0 /* UInt8Extensions.swift in Sources */,
 				24BD632C1E659CC8008454B0 /* MainViewController.swift in Sources */,
+				24BD634B1E65BE35008454B0 /* StringExtensions.swift in Sources */,
 				24BD63411E65A261008454B0 /* UIViewExtensions.swift in Sources */,
 				24BD63491E65A4CA008454B0 /* ColorPickerView.swift in Sources */,
 				24BD632A1E659CC8008454B0 /* AppDelegate.swift in Sources */,

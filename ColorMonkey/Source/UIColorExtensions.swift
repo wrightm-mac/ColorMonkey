@@ -30,4 +30,41 @@ extension UIColor {
                        blue: CGFloat(Float(blue) / 255.0),
                        alpha: CGFloat(Float(alpha) / 255.0))
     }
+    
+    public var cgfloat: (red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat)? {
+        var red : CGFloat = 0
+        var green : CGFloat = 0
+        var blue : CGFloat = 0
+        var alpha: CGFloat = 0
+        
+        if self.getRed(&red, green: &green, blue: &blue, alpha: &alpha) {
+            return (red: red, green: green, blue: blue, alpha: alpha)
+        }
+        else {
+            return nil
+        }
+    }
+    
+    public var uint8: (red: UInt8, green: UInt8, blue: UInt8, alpha: UInt8)? {
+        var red : CGFloat = 0
+        var green : CGFloat = 0
+        var blue : CGFloat = 0
+        var alpha: CGFloat = 0
+        
+        if self.getRed(&red, green: &green, blue: &blue, alpha: &alpha) {
+            return (red: UInt8(red * 255.0), green: UInt8(green * 255.0), blue: UInt8(blue * 255.0), alpha: UInt8(alpha * 255.0))
+        }
+        else {
+            return nil
+        }
+    }
+    
+    public var hex: String? {
+        if let rgb = uint8 {
+            return "(\(rgb.red.hex, rgb.green.hex, rgb.blue.hex))"
+        }
+        else {
+            return nil
+        }
+    }
 }

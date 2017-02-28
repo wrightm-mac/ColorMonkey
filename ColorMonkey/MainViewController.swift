@@ -11,6 +11,7 @@ import UIKit
 
 class MainViewController: UIViewController {
 
+    @IBOutlet weak var colorPicker: ColorPicker!
     @IBOutlet weak var colorView: UIView!
     
     
@@ -18,13 +19,15 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        colorView.backgroundColor = colorPicker.selectedColor
     }
     
     
     // MARK:    Events...
     
     @IBAction func colorValueChanged(_ sender: ColorPicker) {
-        //print("\(#function) selectedColor='\(sender.selectedColor)'")
+        print("\(#function) selectedColor=\(sender.selectedColor.hex!)")
         
         colorView.backgroundColor = sender.selectedColor
     }
