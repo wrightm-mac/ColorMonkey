@@ -20,11 +20,29 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n0n-C7-WbS" customClass="ColorPicker" customModule="ColorMonkey" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="20" width="375" height="73"/>
+                                <color key="backgroundColor" red="0.8901960784313725" green="0.85490196078431369" blue="0.78823529411764703" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="73" id="dyJ-pQ-kIC"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHexadecimal" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="n0n-C7-WbS" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="F8o-ot-YB4"/>
+                            <constraint firstItem="n0n-C7-WbS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="cgf-OE-O4y"/>
+                            <constraint firstAttribute="trailing" secondItem="n0n-C7-WbS" secondAttribute="trailing" id="ylY-mI-dQj"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="117.59999999999999" y="123.68815592203899"/>
         </scene>
     </scenes>
 </document>

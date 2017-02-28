@@ -9,10 +9,31 @@
 import UIKit
 
 
-class MainViewController: UIViewController {
+class MainViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
 
+    
+    // MARK:    Overrides...
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    
+    // MARK:    'UIPickerDatasource'...
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return 256
+    }
+    
+    
+    // MARK:    'UIPickerDelegate'...
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return "\(row)"
     }
 }
 
