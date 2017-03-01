@@ -37,12 +37,11 @@ extension UIColor {
         var blue : CGFloat = 0
         var alpha: CGFloat = 0
         
-        if self.getRed(&red, green: &green, blue: &blue, alpha: &alpha) {
-            return (red.float, green.float, blue.float, alpha.float)
-        }
-        else {
+        guard self.getRed(&red, green: &green, blue: &blue, alpha: &alpha) else {
             return nil
         }
+
+        return (red.float, green.float, blue.float, alpha.float)
     }
     
     public var rgb: (red: UInt8, green: UInt8, blue: UInt8, alpha: UInt8)? {
@@ -51,30 +50,27 @@ extension UIColor {
         var blue : CGFloat = 0
         var alpha: CGFloat = 0
         
-        if getRed(&red, green: &green, blue: &blue, alpha: &alpha) {
-            return (UInt8(red * 255.0), UInt8(green * 255.0), UInt8(blue * 255.0), UInt8(alpha * 255.0))
-        }
-        else {
+        guard getRed(&red, green: &green, blue: &blue, alpha: &alpha) else {
             return nil
         }
+
+        return (UInt8(red * 255.0), UInt8(green * 255.0), UInt8(blue * 255.0), UInt8(alpha * 255.0))
     }
     
     public var hex: String? {
-        if let rgb = rgb {
-            return "(\(rgb.red.hex, rgb.green.hex, rgb.blue.hex))"
-        }
-        else {
+        guard let rgb = rgb else {
             return nil
         }
+        
+        return "(\(rgb.red.hex, rgb.green.hex, rgb.blue.hex))"
     }
     
     public var hexString: String? {
-        if let rgb = rgb {
-            return "\(rgb.red.hex) \(rgb.green.hex) \(rgb.blue.hex)"
-        }
-        else {
+        guard let rgb = rgb else {
             return nil
         }
+
+        return "\(rgb.red.hex) \(rgb.green.hex) \(rgb.blue.hex)"
     }
     
     public var hsl: (hue: Float, saturation: Float, brightness: Float, alpha: Float)? {
@@ -83,33 +79,32 @@ extension UIColor {
         var brightness: CGFloat = 0
         var alpha: CGFloat = 0
         
-        if getHue(&hue, saturation: &saturation, brightness: &brightness, alpha: &alpha) {
-            return (hue.float, saturation.float, brightness.float, alpha.float)
-        }
-        else {
+        guard getHue(&hue, saturation: &saturation, brightness: &brightness, alpha: &alpha) else {
             return nil
         }
+
+        return (hue.float, saturation.float, brightness.float, alpha.float)
     }
     
     public var complement: UIColor? {
-        if let hsl = hsl {
-            var opposite = hsl.hue + 0.5
-            if opposite > 1.0 {
-                opposite -= 1.0
-            }
-            
-            return UIColor(hue: opposite.cgfloat, saturation: hsl.saturation.cgfloat, brightness: hsl.brightness.cgfloat, alpha: hsl.alpha.cgfloat)
+        guard let hsl = hsl else {
+            return nil
+        }
+
+        var opposite = hsl.hue + 0.5
+        if opposite > 1.0 {
+            opposite -= 1.0
         }
         
-        return nil
+        return UIColor(hue: opposite.cgfloat, saturation: hsl.saturation.cgfloat, brightness: hsl.brightness.cgfloat, alpha: hsl.alpha.cgfloat)
     }
     
     public var adjacent: UIColor? {
-        if let rgb = rgb {
-            return UIColor.create(red: rgb.red, green: rgb.green.flip, blue: rgb.blue, alpha: rgb.alpha)
+        guard let rgb = rgb else {
+            return nil
         }
         
-        return nil
+        return UIColor.create(red: rgb.red, green: rgb.green.flip, blue: rgb.blue, alpha: rgb.alpha)
     }
     
     public var saturationVariations: [UIColor]? {
