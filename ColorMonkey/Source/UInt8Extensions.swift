@@ -14,4 +14,13 @@ public extension UInt8 {
     public var hex: String {
         return String(format:"%02X", self)
     }
+    
+    public var flip: UInt8 {
+        var opposite: Int = Int(self) + 127
+        if opposite > 255 {
+            opposite -= 255
+        }
+        
+        return UInt8(opposite)
+    }
 }

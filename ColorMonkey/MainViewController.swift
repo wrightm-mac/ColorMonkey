@@ -21,6 +21,8 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        colorPicker.selectedColor = UIColor.create(red: 0x6D, green: 0x9B, blue: 0xc3)
+        
         show(color: colorPicker.selectedColor)
     }
     
@@ -28,13 +30,11 @@ class MainViewController: UIViewController {
     // MARK:    Methods...
     
     private func show(color: UIColor) {
-        print("\(#function) color -      rgb=\(color.hex!) hsl=\(color.hsl!)")
+        color.debugPrint()
         
         colorView.backgroundColor = color
-        
-        let complement = color.complement!
-        print("\(#function) complement - rgb=\(complement.hex!) hsl=\(complement.hsl!)")
-        complementView.backgroundColor = complement
+        complementView.backgroundColor = color.complement
+        complementView.backgroundColor = color.adjacent
     }
     
     

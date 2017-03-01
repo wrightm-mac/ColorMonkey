@@ -68,6 +68,15 @@ extension UIColor {
         }
     }
     
+    public var hexString: String? {
+        if let rgb = rgb {
+            return "\(rgb.red.hex) \(rgb.green.hex) \(rgb.blue.hex)"
+        }
+        else {
+            return nil
+        }
+    }
+    
     public var hsl: (hue: Float, saturation: Float, brightness: Float, alpha: Float)? {
         var hue: CGFloat = 0
         var saturation: CGFloat = 0
@@ -83,7 +92,6 @@ extension UIColor {
     }
     
     public var complement: UIColor? {
-
         if let hsl = hsl {
             var opposite = hsl.hue + 0.5
             if opposite > 1.0 {
@@ -94,5 +102,20 @@ extension UIColor {
         }
         
         return nil
+    }
+    
+    public var adjacent: UIColor? {
+        if let rgb = rgb {
+            return UIColor.create(red: rgb.red, green: rgb.green.flip, blue: rgb.blue, alpha: rgb.alpha)
+        }
+        
+        return nil
+    }
+    
+    public func debugPrint() {
+        print()
+        print("😮 \(#function) color      rgb=#\(self.hexString!)    hsl=\(self.hsl!)")
+        print("😮 \(#function) complement rgb=#\(complement!.hexString!)    hsl=\(complement!.hsl!)")
+        print("😮 \(#function) adjacent   rgb=#\(adjacent!.hexString!)    hsl=\(adjacent!.hsl!)")
     }
 }
