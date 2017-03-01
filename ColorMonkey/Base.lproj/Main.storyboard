@@ -37,31 +37,42 @@
                                 </connections>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l4L-G2-3Ye">
-                                <rect key="frame" x="0.0" y="610" width="375" height="57"/>
+                                <rect key="frame" x="0.0" y="610" width="375" height="60"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="57" id="2pw-d6-CkS"/>
+                                    <constraint firstAttribute="height" constant="60" id="2pw-d6-CkS"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SZ8-Ds-zbU">
+                                <rect key="frame" x="0.0" y="542" width="375" height="60"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="xoI-rE-AHx"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="SZ8-Ds-zbU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="0Vl-az-3hc"/>
                             <constraint firstAttribute="trailing" secondItem="l4L-G2-3Ye" secondAttribute="trailing" id="5bo-8A-54P"/>
                             <constraint firstItem="n0n-C7-WbS" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="F8o-ot-YB4"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="l4L-G2-3Ye" secondAttribute="bottom" id="TfJ-6O-xSl"/>
+                            <constraint firstItem="l4L-G2-3Ye" firstAttribute="top" secondItem="SZ8-Ds-zbU" secondAttribute="bottom" constant="8" id="Mar-8H-b4Z"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="l4L-G2-3Ye" secondAttribute="bottom" constant="-3" id="TfJ-6O-xSl"/>
                             <constraint firstItem="n0n-C7-WbS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="cgf-OE-O4y"/>
                             <constraint firstItem="l4L-G2-3Ye" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="eOw-jC-Pqu"/>
+                            <constraint firstAttribute="trailing" secondItem="SZ8-Ds-zbU" secondAttribute="trailing" id="jis-ty-Xpy"/>
                             <constraint firstAttribute="trailing" secondItem="n0n-C7-WbS" secondAttribute="trailing" id="ylY-mI-dQj"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="colorPicker" destination="n0n-C7-WbS" id="nOu-Mo-UhQ"/>
                         <outlet property="colorView" destination="l4L-G2-3Ye" id="m6K-IC-DF1"/>
+                        <outlet property="complementView" destination="SZ8-Ds-zbU" id="qfO-NS-WUQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="117.59999999999999" y="123.68815592203899"/>
+            <point key="canvasLocation" x="117.5" y="123.5"/>
         </scene>
     </scenes>
 </document>

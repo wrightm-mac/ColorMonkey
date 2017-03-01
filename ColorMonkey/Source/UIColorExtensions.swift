@@ -52,7 +52,7 @@ extension UIColor {
         var alpha: CGFloat = 0
         
         if getRed(&red, green: &green, blue: &blue, alpha: &alpha) {
-            return (red: UInt8(red * 255.0), green: UInt8(green * 255.0), blue: UInt8(blue * 255.0), alpha: UInt8(alpha * 255.0))
+            return (UInt8(red * 255.0), UInt8(green * 255.0), UInt8(blue * 255.0), UInt8(alpha * 255.0))
         }
         else {
             return nil
@@ -80,5 +80,19 @@ extension UIColor {
         else {
             return nil
         }
+    }
+    
+    public var complement: UIColor? {
+
+        if let hsl = hsl {
+            var opposite = hsl.hue + 0.5
+            if opposite > 1.0 {
+                opposite -= 1.0
+            }
+            
+            return UIColor(hue: opposite.cgfloat, saturation: hsl.saturation.cgfloat, brightness: hsl.brightness.cgfloat, alpha: hsl.alpha.cgfloat)
+        }
+        
+        return nil
     }
 }
