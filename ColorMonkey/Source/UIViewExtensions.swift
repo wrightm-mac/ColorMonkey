@@ -35,13 +35,13 @@ public extension UIView {
         return nibContents
     }
     
-    public func initialiseFromNib(_ nibName: String? = nil) -> UIView {
+    public func addSubviewFromNib(_ nibName: String? = nil) -> UIView {
         let nibView = loadViewFromNib(nibName)
         
         nibView.frame = bounds
         nibView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         
-        self.addSubview(nibView)
+        addSubview(nibView)
         
         return nibView
     }

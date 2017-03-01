@@ -14,6 +14,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var colorPicker: ColorPicker!
     @IBOutlet weak var colorView: UIView!
     @IBOutlet weak var complementView: UIView!
+    @IBOutlet weak var colorPalette: ColorPalette!
     
     
     // MARK:    Overrides...
@@ -35,6 +36,8 @@ class MainViewController: UIViewController {
         colorView.backgroundColor = color
         complementView.backgroundColor = color.complement
         complementView.backgroundColor = color.adjacent
+        
+        colorPalette.colors = color.saturationVariations
     }
     
     

@@ -10,6 +10,11 @@
 		242D88121E66EDE200D5DA66 /* CGFloatExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242D88111E66EDE200D5DA66 /* CGFloatExtensions.swift */; };
 		242D88141E66F3FB00D5DA66 /* FloatExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242D88131E66F3FB00D5DA66 /* FloatExtensions.swift */; };
 		24A4B6DB1E67161000ED2751 /* DoubleExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A4B6DA1E67161000ED2751 /* DoubleExtensions.swift */; };
+		24A4B6DD1E671D1900ED2751 /* ColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A4B6DC1E671D1900ED2751 /* ColorPalette.swift */; };
+		24A4B6DF1E671D4E00ED2751 /* ColorPaletteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A4B6DE1E671D4E00ED2751 /* ColorPaletteView.swift */; };
+		24A4B6E11E671DB400ED2751 /* ColorPalette.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24A4B6E01E671DB400ED2751 /* ColorPalette.xib */; };
+		24A4B6E31E67205C00ED2751 /* ColorPaletteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24A4B6E21E67205C00ED2751 /* ColorPaletteCell.xib */; };
+		24A4B6E51E6720A200ED2751 /* ColorPaletteCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A4B6E41E6720A200ED2751 /* ColorPaletteCellView.swift */; };
 		24BD632A1E659CC8008454B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BD63291E659CC8008454B0 /* AppDelegate.swift */; };
 		24BD632C1E659CC8008454B0 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BD632B1E659CC8008454B0 /* MainViewController.swift */; };
 		24BD632F1E659CC9008454B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24BD632D1E659CC9008454B0 /* Main.storyboard */; };
@@ -28,6 +33,11 @@
 		242D88111E66EDE200D5DA66 /* CGFloatExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CGFloatExtensions.swift; path = Source/CGFloatExtensions.swift; sourceTree = "<group>"; };
 		242D88131E66F3FB00D5DA66 /* FloatExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FloatExtensions.swift; path = Source/FloatExtensions.swift; sourceTree = "<group>"; };
 		24A4B6DA1E67161000ED2751 /* DoubleExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DoubleExtensions.swift; path = Source/DoubleExtensions.swift; sourceTree = "<group>"; };
+		24A4B6DC1E671D1900ED2751 /* ColorPalette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorPalette.swift; path = Source/ColorPalette.swift; sourceTree = "<group>"; };
+		24A4B6DE1E671D4E00ED2751 /* ColorPaletteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorPaletteView.swift; path = Source/ColorPaletteView.swift; sourceTree = "<group>"; };
+		24A4B6E01E671DB400ED2751 /* ColorPalette.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ColorPalette.xib; path = Source/ColorPalette.xib; sourceTree = "<group>"; };
+		24A4B6E21E67205C00ED2751 /* ColorPaletteCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ColorPaletteCell.xib; path = Source/ColorPaletteCell.xib; sourceTree = "<group>"; };
+		24A4B6E41E6720A200ED2751 /* ColorPaletteCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorPaletteCellView.swift; path = Source/ColorPaletteCellView.swift; sourceTree = "<group>"; };
 		24BD63261E659CC8008454B0 /* ColorMonkey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColorMonkey.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24BD63291E659CC8008454B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		24BD632B1E659CC8008454B0 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -101,6 +111,11 @@
 				24BD63441E65A3EA008454B0 /* ColorPicker.swift */,
 				24BD63461E65A49D008454B0 /* ColorPicker.xib */,
 				24BD63481E65A4CA008454B0 /* ColorPickerView.swift */,
+				24A4B6DC1E671D1900ED2751 /* ColorPalette.swift */,
+				24A4B6E01E671DB400ED2751 /* ColorPalette.xib */,
+				24A4B6DE1E671D4E00ED2751 /* ColorPaletteView.swift */,
+				24A4B6E21E67205C00ED2751 /* ColorPaletteCell.xib */,
+				24A4B6E41E6720A200ED2751 /* ColorPaletteCellView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -194,8 +209,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24A4B6E11E671DB400ED2751 /* ColorPalette.xib in Resources */,
 				24BD63471E65A49D008454B0 /* ColorPicker.xib in Resources */,
 				24BD63341E659CC9008454B0 /* LaunchScreen.storyboard in Resources */,
+				24A4B6E31E67205C00ED2751 /* ColorPaletteCell.xib in Resources */,
 				24BD63311E659CC9008454B0 /* Assets.xcassets in Resources */,
 				24BD632F1E659CC9008454B0 /* Main.storyboard in Resources */,
 			);
@@ -210,15 +227,18 @@
 			files = (
 				24BD634D1E65BEFA008454B0 /* UInt8Extensions.swift in Sources */,
 				24BD632C1E659CC8008454B0 /* MainViewController.swift in Sources */,
+				24A4B6E51E6720A200ED2751 /* ColorPaletteCellView.swift in Sources */,
 				242D88141E66F3FB00D5DA66 /* FloatExtensions.swift in Sources */,
 				242D88121E66EDE200D5DA66 /* CGFloatExtensions.swift in Sources */,
 				24BD634B1E65BE35008454B0 /* StringExtensions.swift in Sources */,
 				24BD63411E65A261008454B0 /* UIViewExtensions.swift in Sources */,
 				24BD63491E65A4CA008454B0 /* ColorPickerView.swift in Sources */,
 				24BD632A1E659CC8008454B0 /* AppDelegate.swift in Sources */,
+				24A4B6DF1E671D4E00ED2751 /* ColorPaletteView.swift in Sources */,
 				24BD63431E65A2B7008454B0 /* UIColorExtensions.swift in Sources */,
 				24BD63451E65A3EA008454B0 /* ColorPicker.swift in Sources */,
 				24A4B6DB1E67161000ED2751 /* DoubleExtensions.swift in Sources */,
+				24A4B6DD1E671D1900ED2751 /* ColorPalette.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
