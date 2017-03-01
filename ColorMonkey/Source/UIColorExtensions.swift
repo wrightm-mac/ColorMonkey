@@ -112,10 +112,54 @@ extension UIColor {
         return nil
     }
     
+    public var saturationVariations: [UIColor]? {
+        let numberOfSteps = 20.0
+        let stepIncrement = 1.0 / numberOfSteps
+        
+        guard let hsl = hsl else {
+            return nil
+        }
+        
+        var variations = [UIColor]()
+        
+        var saturationStep = 0.0
+        repeat {
+            let saturationColor = UIColor(hue: hsl.hue.cgfloat, saturation: saturationStep.cgfloat, brightness: hsl.brightness.cgfloat, alpha: hsl.alpha.cgfloat)
+            variations.append(saturationColor)
+            saturationStep += stepIncrement
+            
+        } while saturationStep <= 1.0
+        
+        return variations
+    }
+    
+    public var brightnessVariations: [UIColor]? {
+        let numberOfSteps = 20.0
+        let stepIncrement = 1.0 / numberOfSteps
+        
+        guard let hsl = hsl else {
+            return nil
+        }
+        
+        var variations = [UIColor]()
+        
+        var brightnessStep = 0.0
+        repeat {
+            let brightnessColor = UIColor(hue: hsl.hue.cgfloat, saturation: hsl.saturation.cgfloat, brightness: brightnessStep.cgfloat, alpha: hsl.alpha.cgfloat)
+            variations.append(brightnessColor)
+            brightnessStep += stepIncrement
+            
+        } while brightnessStep <= 1.0
+        
+        return variations
+    }
+    
     public func debugPrint() {
         print()
-        print("😮 \(#function) color      rgb=#\(self.hexString!)    hsl=\(self.hsl!)")
-        print("😮 \(#function) complement rgb=#\(complement!.hexString!)    hsl=\(complement!.hsl!)")
-        print("😮 \(#function) adjacent   rgb=#\(adjacent!.hexString!)    hsl=\(adjacent!.hsl!)")
+        print("😮 \(#function) color       rgb=#\(hexString!)    hsl=\(hsl!)")
+        print("😮 \(#function) complement  rgb=#\(complement!.hexString!)    hsl=\(complement!.hsl!)")
+        print("😮 \(#function) adjacent    rgb=#\(adjacent!.hexString!)    hsl=\(adjacent!.hsl!)")
+        print("😮 \(#function) bright*     count=\(brightnessVariations!.count)")
+        print("😮 \(#function) saturation* count=\(saturationVariations!.count)")
     }
 }
