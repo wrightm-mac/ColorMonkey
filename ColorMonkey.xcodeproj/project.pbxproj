@@ -15,6 +15,7 @@
 		24A4B6E11E671DB400ED2751 /* ColorPalette.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24A4B6E01E671DB400ED2751 /* ColorPalette.xib */; };
 		24A4B6E31E67205C00ED2751 /* ColorPaletteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24A4B6E21E67205C00ED2751 /* ColorPaletteCell.xib */; };
 		24A4B6E51E6720A200ED2751 /* ColorPaletteCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A4B6E41E6720A200ED2751 /* ColorPaletteCellView.swift */; };
+		24A4B6E71E672BFB00ED2751 /* ColorPaletteDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A4B6E61E672BFB00ED2751 /* ColorPaletteDelegate.swift */; };
 		24BD632A1E659CC8008454B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BD63291E659CC8008454B0 /* AppDelegate.swift */; };
 		24BD632C1E659CC8008454B0 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BD632B1E659CC8008454B0 /* MainViewController.swift */; };
 		24BD632F1E659CC9008454B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24BD632D1E659CC9008454B0 /* Main.storyboard */; };
@@ -38,6 +39,7 @@
 		24A4B6E01E671DB400ED2751 /* ColorPalette.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ColorPalette.xib; path = Source/ColorPalette.xib; sourceTree = "<group>"; };
 		24A4B6E21E67205C00ED2751 /* ColorPaletteCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ColorPaletteCell.xib; path = Source/ColorPaletteCell.xib; sourceTree = "<group>"; };
 		24A4B6E41E6720A200ED2751 /* ColorPaletteCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorPaletteCellView.swift; path = Source/ColorPaletteCellView.swift; sourceTree = "<group>"; };
+		24A4B6E61E672BFB00ED2751 /* ColorPaletteDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorPaletteDelegate.swift; path = Source/ColorPaletteDelegate.swift; sourceTree = "<group>"; };
 		24BD63261E659CC8008454B0 /* ColorMonkey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColorMonkey.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24BD63291E659CC8008454B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		24BD632B1E659CC8008454B0 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 				24A4B6DE1E671D4E00ED2751 /* ColorPaletteView.swift */,
 				24A4B6E21E67205C00ED2751 /* ColorPaletteCell.xib */,
 				24A4B6E41E6720A200ED2751 /* ColorPaletteCellView.swift */,
+				24A4B6E61E672BFB00ED2751 /* ColorPaletteDelegate.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -230,6 +233,7 @@
 				24A4B6E51E6720A200ED2751 /* ColorPaletteCellView.swift in Sources */,
 				242D88141E66F3FB00D5DA66 /* FloatExtensions.swift in Sources */,
 				242D88121E66EDE200D5DA66 /* CGFloatExtensions.swift in Sources */,
+				24A4B6E71E672BFB00ED2751 /* ColorPaletteDelegate.swift in Sources */,
 				24BD634B1E65BE35008454B0 /* StringExtensions.swift in Sources */,
 				24BD63411E65A261008454B0 /* UIViewExtensions.swift in Sources */,
 				24BD63491E65A4CA008454B0 /* ColorPickerView.swift in Sources */,

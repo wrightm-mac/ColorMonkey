@@ -22,6 +22,16 @@ open class ColorPalette: UIView, UICollectionViewDataSource, UICollectionViewDel
     
     @IBInspectable open var cellSize: CGSize = CGSize(width: 60.0, height: 60.0)
     
+    @IBInspectable open var scrollDirection: UICollectionViewScrollDirection = .vertical {
+        didSet {
+            let layout = UICollectionViewFlowLayout()
+            layout.scrollDirection = scrollDirection
+            view.collectionViewLayout = layout
+        }
+    }
+    
+    @IBInspectable open var delegate: ColorPaletteDelegate? = nil
+    
     
     // MARK:    Fields...
     
@@ -54,8 +64,6 @@ open class ColorPalette: UIView, UICollectionViewDataSource, UICollectionViewDel
     open override func awakeFromNib() {
         super.awakeFromNib()
         
-        view.debug(.purple)
-        
         view.register(getNib("ColorPaletteCell"), forCellWithReuseIdentifier: "PaletteCell")
     }
     
@@ -83,6 +91,29 @@ open class ColorPalette: UIView, UICollectionViewDataSource, UICollectionViewDel
     
     // MARK:    'UICollectionViewDelegate'...
     
+    open func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
+        print("😮 ColorPalette.\(#function)")
+        
+        return true
+    }
+    
+    open func collectionView(_ collectionView: UICollectionView, shouldDeselectItemAt indexPath: IndexPath) -> Bool {
+        print("😮 ColorPalette.\(#function)")
+
+        return true
+    }
+    
+    open func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("😮 ColorPalette.\(#function)")
+        
+        if let delegate = delegate, let color = colors?[indexPath.row] {
+            delegate.colorPalette?(self, selectedColor: color)
+        }
+    }
+    
+    open func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        print("😮 ColorPalette.\(#function)")
+    }
     
     
     // MARK:    'UICollectionViewDelegateFlowLayout'...

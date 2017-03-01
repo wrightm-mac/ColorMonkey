@@ -14,6 +14,6 @@ class ColorPaletteCellView: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        applyBorder(cornerSize: .medium)
+        applyBorder(cornerSize: .small)
     }
 }
