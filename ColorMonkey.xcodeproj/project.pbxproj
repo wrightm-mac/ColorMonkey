@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		242D88121E66EDE200D5DA66 /* CGFloatExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242D88111E66EDE200D5DA66 /* CGFloatExtensions.swift */; };
 		24BD632A1E659CC8008454B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BD63291E659CC8008454B0 /* AppDelegate.swift */; };
 		24BD632C1E659CC8008454B0 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BD632B1E659CC8008454B0 /* MainViewController.swift */; };
 		24BD632F1E659CC9008454B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24BD632D1E659CC9008454B0 /* Main.storyboard */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		242D88111E66EDE200D5DA66 /* CGFloatExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CGFloatExtensions.swift; path = Source/CGFloatExtensions.swift; sourceTree = "<group>"; };
 		24BD63261E659CC8008454B0 /* ColorMonkey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColorMonkey.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24BD63291E659CC8008454B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		24BD632B1E659CC8008454B0 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 		24BD633F1E65A243008454B0 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				242D88111E66EDE200D5DA66 /* CGFloatExtensions.swift */,
 				24BD634A1E65BE35008454B0 /* StringExtensions.swift */,
 				24BD634C1E65BEFA008454B0 /* UInt8Extensions.swift */,
 				24BD63421E65A2B7008454B0 /* UIColorExtensions.swift */,
@@ -201,6 +204,7 @@
 			files = (
 				24BD634D1E65BEFA008454B0 /* UInt8Extensions.swift in Sources */,
 				24BD632C1E659CC8008454B0 /* MainViewController.swift in Sources */,
+				242D88121E66EDE200D5DA66 /* CGFloatExtensions.swift in Sources */,
 				24BD634B1E65BE35008454B0 /* StringExtensions.swift in Sources */,
 				24BD63411E65A261008454B0 /* UIViewExtensions.swift in Sources */,
 				24BD63491E65A4CA008454B0 /* ColorPickerView.swift in Sources */,

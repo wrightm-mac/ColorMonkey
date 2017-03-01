@@ -57,7 +57,7 @@ open class ColorPicker: UIControl, UIPickerViewDataSource, UIPickerViewDelegate 
         view.backgroundColor = backgroundColor
         view.applyBorder(cornerSize: .medium, width: .medium, color: .black)
         
-        if let rgb = selectedColor.uint8 {
+        if let rgb = selectedColor.rgb {
             view.redPicker.selectRow(Int(rgb.red), inComponent: 0, animated: animateSelection)
             view.greenPicker.selectRow(Int(rgb.green), inComponent: 0, animated: animateSelection)
             view.bluePicker.selectRow(Int(rgb.blue), inComponent: 0, animated: animateSelection)

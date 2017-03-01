@@ -31,27 +31,27 @@ extension UIColor {
                        alpha: CGFloat(Float(alpha) / 255.0))
     }
     
-    public var cgfloat: (red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat)? {
+    public var rgbFloat: (red: Float, green: Float, blue: Float, alpha: Float)? {
         var red : CGFloat = 0
         var green : CGFloat = 0
         var blue : CGFloat = 0
         var alpha: CGFloat = 0
         
         if self.getRed(&red, green: &green, blue: &blue, alpha: &alpha) {
-            return (red: red, green: green, blue: blue, alpha: alpha)
+            return (red.float, green.float, blue.float, alpha.float)
         }
         else {
             return nil
         }
     }
     
-    public var uint8: (red: UInt8, green: UInt8, blue: UInt8, alpha: UInt8)? {
+    public var rgb: (red: UInt8, green: UInt8, blue: UInt8, alpha: UInt8)? {
         var red : CGFloat = 0
         var green : CGFloat = 0
         var blue : CGFloat = 0
         var alpha: CGFloat = 0
         
-        if self.getRed(&red, green: &green, blue: &blue, alpha: &alpha) {
+        if getRed(&red, green: &green, blue: &blue, alpha: &alpha) {
             return (red: UInt8(red * 255.0), green: UInt8(green * 255.0), blue: UInt8(blue * 255.0), alpha: UInt8(alpha * 255.0))
         }
         else {
@@ -60,8 +60,22 @@ extension UIColor {
     }
     
     public var hex: String? {
-        if let rgb = uint8 {
+        if let rgb = rgb {
             return "(\(rgb.red.hex, rgb.green.hex, rgb.blue.hex))"
+        }
+        else {
+            return nil
+        }
+    }
+    
+    public var hsl: (hue: Float, saturation: Float, brightness: Float, alpha: Float)? {
+        var hue: CGFloat = 0
+        var saturation: CGFloat = 0
+        var brightness: CGFloat = 0
+        var alpha: CGFloat = 0
+        
+        if getHue(&hue, saturation: &saturation, brightness: &brightness, alpha: &alpha) {
+            return (hue.float, saturation.float, brightness.float, alpha.float)
         }
         else {
             return nil

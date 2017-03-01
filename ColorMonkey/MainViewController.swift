@@ -27,7 +27,7 @@ class MainViewController: UIViewController {
     // MARK:    Events...
     
     @IBAction func colorValueChanged(_ sender: ColorPicker) {
-        print("\(#function) selectedColor=\(sender.selectedColor.hex!)")
+        print("\(#function) selectedColor - rgb=\(sender.selectedColor.rgb!) hsl=\(sender.selectedColor.hsl!)")
         
         colorView.backgroundColor = sender.selectedColor
     }
