@@ -21,7 +21,7 @@ public extension Float {
             return Int(self * 100.0)
         }
         set {
-            self = self / 100.0
+            self = Float(newValue) / 100.0
         }
     }
     
@@ -34,10 +34,14 @@ public extension Float {
                 let degree: Float = (1.0 / 360.0)
                 let result = degree * self
                 
-                print("---> [degree=\(degree)] [value=\(self)] [result=\(result)]")
-                
-                return Int(result * 100000)
+                return Int(result * 100000.0)
             }
+        }
+        set {
+            let degree: Float = (1.0 / 360.0)
+            let amount: Float = Float(newValue) / 100000.0
+            
+            self = degree * amount
         }
     }
 }

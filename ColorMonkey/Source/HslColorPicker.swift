@@ -99,10 +99,16 @@ open class HslColorPicker: UIControl, UIPickerViewDataSource, UIPickerViewDelega
     }
     
     open func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-//        selectedColor = UIColor.create(red: UInt8(view.redPicker.selectedRow(inComponent: 0)),
-//                                       green: UInt8(view.greenPicker.selectedRow(inComponent: 0)),
-//                                       blue: UInt8(view.bluePicker.selectedRow(inComponent: 0)))
+//        let hue = view.huePicker.selectedRow(inComponent: 0)
+//        let saturation = view.saturationPicker.selectedRow(inComponent: 0)
+//        let brightness = view.brightnessPicker.selectedRow(inComponent: 0)
 //        
-//        sendActions(for: .valueChanged)
+//        selectedColor = UIColor(hue: hue§, saturation: <#T##CGFloat#>, brightness: <#T##CGFloat#>, alpha: <#T##CGFloat#>)
+//        
+////        selectedColor = UIColor.create(red: UInt8(view.redPicker.selectedRow(inComponent: 0)),
+////                                       green: UInt8(view.greenPicker.selectedRow(inComponent: 0)),
+////                                       blue: UInt8(view.bluePicker.selectedRow(inComponent: 0)))
+////        
+////        sendActions(for: .valueChanged)
     }
 }

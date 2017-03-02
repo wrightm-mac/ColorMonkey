@@ -58,7 +58,12 @@ class MainViewController: UIViewController, ColorPaletteDelegate {
     
     
     // MARK:    Events...
+    
     @IBAction func rgbValueChanged(_ sender: RgbColorPicker) {
+        show(color: sender.selectedColor)
+    }
+    
+    @IBAction func hslValueChanged(_ sender: HslColorPicker) {
         show(color: sender.selectedColor)
     }
 }
