@@ -11,7 +11,7 @@ import UIKit
 
 class MainViewController: UIViewController, ColorPaletteDelegate {
 
-    @IBOutlet weak var colorPicker: ColorPicker!
+    @IBOutlet weak var rgbPicker: RgbColorPicker!
     @IBOutlet weak var colorView: UIView!
     @IBOutlet weak var complementView: UIView!
     @IBOutlet weak var colorPalette: ColorPalette!
@@ -22,9 +22,9 @@ class MainViewController: UIViewController, ColorPaletteDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        colorPicker.selectedColor = UIColor.create(red: 0x6D, green: 0x9B, blue: 0xc3)
+        rgbPicker.selectedColor = UIColor.create(red: 0x6D, green: 0x9B, blue: 0xc3)
         colorPalette.delegate = self
-        show(color: colorPicker.selectedColor)
+        show(color: rgbPicker.selectedColor)
     }
     
     
@@ -37,7 +37,7 @@ class MainViewController: UIViewController, ColorPaletteDelegate {
         complementView.backgroundColor = color.complement
         complementView.backgroundColor = color.adjacent
         
-        colorPicker.selectedColor = color
+        rgbPicker.selectedColor = color
         colorPalette.colors = color.saturationVariations
     }
     
@@ -48,9 +48,9 @@ class MainViewController: UIViewController, ColorPaletteDelegate {
         show(color: selectedColor)
     }
     
-    // MARK:    Events...
     
-    @IBAction func colorValueChanged(_ sender: ColorPicker) {
+    // MARK:    Events...
+    @IBAction func rgbValueChanged(_ sender: RgbColorPicker) {
         show(color: sender.selectedColor)
     }
 }

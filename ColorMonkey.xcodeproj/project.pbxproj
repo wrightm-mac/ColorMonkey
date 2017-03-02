@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		241331311E686F5800E96B11 /* RgbColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241331301E686F5800E96B11 /* RgbColorPicker.swift */; };
+		241331331E686FAE00E96B11 /* RgbColorPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241331321E686FAE00E96B11 /* RgbColorPickerView.swift */; };
+		241331351E686FDD00E96B11 /* RgbColorPicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 241331341E686FDD00E96B11 /* RgbColorPicker.xib */; };
 		242D88121E66EDE200D5DA66 /* CGFloatExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242D88111E66EDE200D5DA66 /* CGFloatExtensions.swift */; };
 		242D88141E66F3FB00D5DA66 /* FloatExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242D88131E66F3FB00D5DA66 /* FloatExtensions.swift */; };
 		24A4B6DB1E67161000ED2751 /* DoubleExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A4B6DA1E67161000ED2751 /* DoubleExtensions.swift */; };
@@ -31,6 +34,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		241331301E686F5800E96B11 /* RgbColorPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RgbColorPicker.swift; path = Source/RgbColorPicker.swift; sourceTree = "<group>"; };
+		241331321E686FAE00E96B11 /* RgbColorPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RgbColorPickerView.swift; path = Source/RgbColorPickerView.swift; sourceTree = "<group>"; };
+		241331341E686FDD00E96B11 /* RgbColorPicker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RgbColorPicker.xib; path = Source/RgbColorPicker.xib; sourceTree = "<group>"; };
 		242D88111E66EDE200D5DA66 /* CGFloatExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CGFloatExtensions.swift; path = Source/CGFloatExtensions.swift; sourceTree = "<group>"; };
 		242D88131E66F3FB00D5DA66 /* FloatExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FloatExtensions.swift; path = Source/FloatExtensions.swift; sourceTree = "<group>"; };
 		24A4B6DA1E67161000ED2751 /* DoubleExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DoubleExtensions.swift; path = Source/DoubleExtensions.swift; sourceTree = "<group>"; };
@@ -119,6 +125,9 @@
 				24A4B6E21E67205C00ED2751 /* ColorPaletteCell.xib */,
 				24A4B6E41E6720A200ED2751 /* ColorPaletteCellView.swift */,
 				24A4B6E61E672BFB00ED2751 /* ColorPaletteDelegate.swift */,
+				241331301E686F5800E96B11 /* RgbColorPicker.swift */,
+				241331341E686FDD00E96B11 /* RgbColorPicker.xib */,
+				241331321E686FAE00E96B11 /* RgbColorPickerView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -212,6 +221,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				241331351E686FDD00E96B11 /* RgbColorPicker.xib in Resources */,
 				24A4B6E11E671DB400ED2751 /* ColorPalette.xib in Resources */,
 				24BD63471E65A49D008454B0 /* ColorPicker.xib in Resources */,
 				24BD63341E659CC9008454B0 /* LaunchScreen.storyboard in Resources */,
@@ -235,6 +245,8 @@
 				242D88121E66EDE200D5DA66 /* CGFloatExtensions.swift in Sources */,
 				24A4B6E71E672BFB00ED2751 /* ColorPaletteDelegate.swift in Sources */,
 				24BD634B1E65BE35008454B0 /* StringExtensions.swift in Sources */,
+				241331311E686F5800E96B11 /* RgbColorPicker.swift in Sources */,
+				241331331E686FAE00E96B11 /* RgbColorPickerView.swift in Sources */,
 				24BD63411E65A261008454B0 /* UIViewExtensions.swift in Sources */,
 				24BD63491E65A4CA008454B0 /* ColorPickerView.swift in Sources */,
 				24BD632A1E659CC8008454B0 /* AppDelegate.swift in Sources */,
