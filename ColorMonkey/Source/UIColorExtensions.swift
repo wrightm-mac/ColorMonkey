@@ -108,7 +108,7 @@ extension UIColor {
     }
     
     public var saturationVariations: [UIColor]? {
-        let numberOfSteps = 20.0
+        let numberOfSteps = 32.0
         let stepIncrement = 1.0 / numberOfSteps
         
         guard let hsl = hsl else {
@@ -129,7 +129,7 @@ extension UIColor {
     }
     
     public var brightnessVariations: [UIColor]? {
-        let numberOfSteps = 20.0
+        let numberOfSteps = 32.0
         let stepIncrement = 1.0 / numberOfSteps
         
         guard let hsl = hsl else {

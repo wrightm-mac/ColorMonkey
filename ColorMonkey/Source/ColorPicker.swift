@@ -17,7 +17,11 @@ open class ColorPicker: UIControl, UIPickerViewDataSource, UIPickerViewDelegate 
     
     @IBInspectable open var showHexadecimal: Bool = true
     
-    @IBInspectable open var selectedColor: UIColor = .black
+    @IBInspectable open var selectedColor: UIColor = .black {
+        didSet {
+            selectColor(selectedColor)
+        }
+    }
     
     @IBInspectable open var animateSelection: Bool = true
     
@@ -57,7 +61,14 @@ open class ColorPicker: UIControl, UIPickerViewDataSource, UIPickerViewDelegate 
         view.backgroundColor = backgroundColor
         view.applyBorder(cornerSize: .medium, width: .medium, color: .black)
         
-        if let rgb = selectedColor.rgb {
+        selectColor(selectedColor)
+    }
+    
+    
+    // MARK:    Methods...
+    
+    private func selectColor(_ color: UIColor) {
+        if let rgb = color.rgb {
             view.redPicker.selectRow(Int(rgb.red), inComponent: 0, animated: animateSelection)
             view.greenPicker.selectRow(Int(rgb.green), inComponent: 0, animated: animateSelection)
             view.bluePicker.selectRow(Int(rgb.blue), inComponent: 0, animated: animateSelection)
