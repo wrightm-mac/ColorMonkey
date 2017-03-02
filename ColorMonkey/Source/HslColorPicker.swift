@@ -10,12 +10,12 @@ import UIKit
 
 
 @IBDesignable
-open class ColorPicker: UIControl, UIPickerViewDataSource, UIPickerViewDelegate {
+open class HslColorPicker: UIControl, UIPickerViewDataSource, UIPickerViewDelegate {
 
     
     // MARK:    Inspectables...
     
-    @IBInspectable open var showHexadecimal: Bool = true
+    //!@IBInspectable open var showHexadecimal: Bool = true
     
     @IBInspectable open var selectedColor: UIColor = .black {
         didSet {
@@ -28,7 +28,7 @@ open class ColorPicker: UIControl, UIPickerViewDataSource, UIPickerViewDelegate 
     
     // MARK:    Fields...
     
-    private var view: ColorPickerView!
+    private var view: HslColorPickerView!
     
     
     // MARK:    Initialisers...
@@ -36,19 +36,19 @@ open class ColorPicker: UIControl, UIPickerViewDataSource, UIPickerViewDelegate 
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
-        view = addSubviewFromNib() as! ColorPickerView
+        view = addSubviewFromNib() as! HslColorPickerView
     }
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
         
-        view = addSubviewFromNib() as! ColorPickerView
+        view = addSubviewFromNib() as! HslColorPickerView
     }
     
     public convenience init() {
         self.init(frame: CGRect(x: 0.0, y: 0.0, width: 10.0, height: 10.0))
         
-        view = addSubviewFromNib() as! ColorPickerView
+        view = addSubviewFromNib() as! HslColorPickerView
     }
 
 
@@ -68,10 +68,10 @@ open class ColorPicker: UIControl, UIPickerViewDataSource, UIPickerViewDelegate 
     // MARK:    Methods...
     
     private func selectColor(_ color: UIColor) {
-        if let rgb = color.rgb {
-            view.redPicker.selectRow(Int(rgb.red), inComponent: 0, animated: animateSelection)
-            view.greenPicker.selectRow(Int(rgb.green), inComponent: 0, animated: animateSelection)
-            view.bluePicker.selectRow(Int(rgb.blue), inComponent: 0, animated: animateSelection)
+        if let hsl = color.hsl {
+            view.huePicker.selectRow(hsl.hue.degrees, inComponent: 0, animated: animateSelection)
+            view.saturationPicker.selectRow(hsl.saturation.percent, inComponent: 0, animated: animateSelection)
+            view.brightnessPicker.selectRow(hsl.brightness.percent, inComponent: 0, animated: animateSelection)
         }
     }
     
@@ -83,21 +83,26 @@ open class ColorPicker: UIControl, UIPickerViewDataSource, UIPickerViewDelegate 
     }
     
     open func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return 256
+        if pickerView == view.huePicker {
+            return 361
+        }
+        else {
+            return 101
+        }
     }
     
     
     // MARK:    'UIPickerDelegate'...
     
     open func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return showHexadecimal ? String(format:"%02X", row) : "\(row)"
+        return "\(row)"
     }
     
     open func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        selectedColor = UIColor.create(red: UInt8(view.redPicker.selectedRow(inComponent: 0)),
-                                       green: UInt8(view.greenPicker.selectedRow(inComponent: 0)),
-                                       blue: UInt8(view.bluePicker.selectedRow(inComponent: 0)))
-        
-        sendActions(for: .valueChanged)
+//        selectedColor = UIColor.create(red: UInt8(view.redPicker.selectedRow(inComponent: 0)),
+//                                       green: UInt8(view.greenPicker.selectedRow(inComponent: 0)),
+//                                       blue: UInt8(view.bluePicker.selectedRow(inComponent: 0)))
+//        
+//        sendActions(for: .valueChanged)
     }
 }

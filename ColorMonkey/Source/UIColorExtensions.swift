@@ -152,9 +152,10 @@ extension UIColor {
     public func debugPrint() {
         print()
         print("😮 \(#function) color       rgb=#\(hexString!)    hsl=\(hsl!)")
-        print("😮 \(#function) complement  rgb=#\(complement!.hexString!)    hsl=\(complement!.hsl!)")
-        print("😮 \(#function) adjacent    rgb=#\(adjacent!.hexString!)    hsl=\(adjacent!.hsl!)")
-        print("😮 \(#function) bright*     count=\(brightnessVariations!.count)")
-        print("😮 \(#function) saturation* count=\(saturationVariations!.count)")
+        print("😮 \(#function) color       hsl=\(hsl!.hue.degrees)º \(hsl!.saturation.percent)% \(hsl!.brightness.percent)%")
+//        print("😮 \(#function) complement  rgb=#\(complement!.hexString!)    hsl=\(complement!.hsl!)")
+//        print("😮 \(#function) adjacent    rgb=#\(adjacent!.hexString!)    hsl=\(adjacent!.hsl!)")
+//        print("😮 \(#function) bright*     count=\(brightnessVariations!.count)")
+//        print("😮 \(#function) saturation* count=\(saturationVariations!.count)")
     }
 }

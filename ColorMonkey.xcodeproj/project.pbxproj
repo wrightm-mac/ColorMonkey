@@ -26,9 +26,9 @@
 		24BD63341E659CC9008454B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24BD63321E659CC9008454B0 /* LaunchScreen.storyboard */; };
 		24BD63411E65A261008454B0 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BD63401E65A261008454B0 /* UIViewExtensions.swift */; };
 		24BD63431E65A2B7008454B0 /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BD63421E65A2B7008454B0 /* UIColorExtensions.swift */; };
-		24BD63451E65A3EA008454B0 /* ColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BD63441E65A3EA008454B0 /* ColorPicker.swift */; };
-		24BD63471E65A49D008454B0 /* ColorPicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24BD63461E65A49D008454B0 /* ColorPicker.xib */; };
-		24BD63491E65A4CA008454B0 /* ColorPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BD63481E65A4CA008454B0 /* ColorPickerView.swift */; };
+		24BD63451E65A3EA008454B0 /* HslColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BD63441E65A3EA008454B0 /* HslColorPicker.swift */; };
+		24BD63471E65A49D008454B0 /* HslColorPicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24BD63461E65A49D008454B0 /* HslColorPicker.xib */; };
+		24BD63491E65A4CA008454B0 /* HslColorPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BD63481E65A4CA008454B0 /* HslColorPickerView.swift */; };
 		24BD634B1E65BE35008454B0 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BD634A1E65BE35008454B0 /* StringExtensions.swift */; };
 		24BD634D1E65BEFA008454B0 /* UInt8Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BD634C1E65BEFA008454B0 /* UInt8Extensions.swift */; };
 /* End PBXBuildFile section */
@@ -55,9 +55,9 @@
 		24BD63351E659CC9008454B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		24BD63401E65A261008454B0 /* UIViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIViewExtensions.swift; path = Source/UIViewExtensions.swift; sourceTree = "<group>"; };
 		24BD63421E65A2B7008454B0 /* UIColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIColorExtensions.swift; path = Source/UIColorExtensions.swift; sourceTree = "<group>"; };
-		24BD63441E65A3EA008454B0 /* ColorPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorPicker.swift; path = Source/ColorPicker.swift; sourceTree = "<group>"; };
-		24BD63461E65A49D008454B0 /* ColorPicker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ColorPicker.xib; path = Source/ColorPicker.xib; sourceTree = "<group>"; };
-		24BD63481E65A4CA008454B0 /* ColorPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorPickerView.swift; path = Source/ColorPickerView.swift; sourceTree = "<group>"; };
+		24BD63441E65A3EA008454B0 /* HslColorPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HslColorPicker.swift; path = Source/HslColorPicker.swift; sourceTree = "<group>"; };
+		24BD63461E65A49D008454B0 /* HslColorPicker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HslColorPicker.xib; path = Source/HslColorPicker.xib; sourceTree = "<group>"; };
+		24BD63481E65A4CA008454B0 /* HslColorPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HslColorPickerView.swift; path = Source/HslColorPickerView.swift; sourceTree = "<group>"; };
 		24BD634A1E65BE35008454B0 /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringExtensions.swift; path = Source/StringExtensions.swift; sourceTree = "<group>"; };
 		24BD634C1E65BEFA008454B0 /* UInt8Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UInt8Extensions.swift; path = Source/UInt8Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -116,15 +116,15 @@
 		24BD633C1E65A1E8008454B0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				24BD63441E65A3EA008454B0 /* ColorPicker.swift */,
-				24BD63461E65A49D008454B0 /* ColorPicker.xib */,
-				24BD63481E65A4CA008454B0 /* ColorPickerView.swift */,
 				24A4B6DC1E671D1900ED2751 /* ColorPalette.swift */,
 				24A4B6E01E671DB400ED2751 /* ColorPalette.xib */,
 				24A4B6DE1E671D4E00ED2751 /* ColorPaletteView.swift */,
 				24A4B6E21E67205C00ED2751 /* ColorPaletteCell.xib */,
 				24A4B6E41E6720A200ED2751 /* ColorPaletteCellView.swift */,
 				24A4B6E61E672BFB00ED2751 /* ColorPaletteDelegate.swift */,
+				24BD63441E65A3EA008454B0 /* HslColorPicker.swift */,
+				24BD63461E65A49D008454B0 /* HslColorPicker.xib */,
+				24BD63481E65A4CA008454B0 /* HslColorPickerView.swift */,
 				241331301E686F5800E96B11 /* RgbColorPicker.swift */,
 				241331341E686FDD00E96B11 /* RgbColorPicker.xib */,
 				241331321E686FAE00E96B11 /* RgbColorPickerView.swift */,
@@ -223,7 +223,7 @@
 			files = (
 				241331351E686FDD00E96B11 /* RgbColorPicker.xib in Resources */,
 				24A4B6E11E671DB400ED2751 /* ColorPalette.xib in Resources */,
-				24BD63471E65A49D008454B0 /* ColorPicker.xib in Resources */,
+				24BD63471E65A49D008454B0 /* HslColorPicker.xib in Resources */,
 				24BD63341E659CC9008454B0 /* LaunchScreen.storyboard in Resources */,
 				24A4B6E31E67205C00ED2751 /* ColorPaletteCell.xib in Resources */,
 				24BD63311E659CC9008454B0 /* Assets.xcassets in Resources */,
@@ -248,11 +248,11 @@
 				241331311E686F5800E96B11 /* RgbColorPicker.swift in Sources */,
 				241331331E686FAE00E96B11 /* RgbColorPickerView.swift in Sources */,
 				24BD63411E65A261008454B0 /* UIViewExtensions.swift in Sources */,
-				24BD63491E65A4CA008454B0 /* ColorPickerView.swift in Sources */,
+				24BD63491E65A4CA008454B0 /* HslColorPickerView.swift in Sources */,
 				24BD632A1E659CC8008454B0 /* AppDelegate.swift in Sources */,
 				24A4B6DF1E671D4E00ED2751 /* ColorPaletteView.swift in Sources */,
 				24BD63431E65A2B7008454B0 /* UIColorExtensions.swift in Sources */,
-				24BD63451E65A3EA008454B0 /* ColorPicker.swift in Sources */,
+				24BD63451E65A3EA008454B0 /* HslColorPicker.swift in Sources */,
 				24A4B6DB1E67161000ED2751 /* DoubleExtensions.swift in Sources */,
 				24A4B6DD1E671D1900ED2751 /* ColorPalette.swift in Sources */,
 			);
