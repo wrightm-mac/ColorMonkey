@@ -11,10 +11,16 @@ import Foundation
 
 public extension UInt8 {
     
+    /**
+     *Hexadecimal* representation.
+    */
     public var hex: String {
         return String(format:"%02X", self)
     }
     
+    /**
+     Rotates the value by half-maximum.
+    */
     public var flip: UInt8 {
         var opposite: Int = Int(self) + 127
         if opposite > 255 {
