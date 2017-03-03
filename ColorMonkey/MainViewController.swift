@@ -16,7 +16,8 @@ class MainViewController: UIViewController, ColorPaletteDelegate {
     @IBOutlet weak var colorView: UIView!
     @IBOutlet weak var complementView: UIView!
     @IBOutlet weak var colorPalette: ColorPalette!
-    
+    @IBOutlet weak var brightnessPalette: ColorPalette!
+
     
     // MARK:    Overrides...
     
@@ -29,6 +30,7 @@ class MainViewController: UIViewController, ColorPaletteDelegate {
         hslPicker.selectedColor = firstColor
         
         colorPalette.delegate = self
+        brightnessPalette.delegate = self
         
         show(color: rgbPicker.selectedColor)
     }
@@ -47,6 +49,7 @@ class MainViewController: UIViewController, ColorPaletteDelegate {
         hslPicker.selectedColor = color
         
         colorPalette.colors = color.saturationVariations
+        brightnessPalette.colors = color.brightnessVariations
     }
     
     

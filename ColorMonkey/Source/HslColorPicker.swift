@@ -84,7 +84,7 @@ open class HslColorPicker: UIControl, UIPickerViewDataSource, UIPickerViewDelega
     
     open func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         if pickerView == view.huePicker {
-            return 361
+            return 360
         }
         else {
             return 101
@@ -95,20 +95,21 @@ open class HslColorPicker: UIControl, UIPickerViewDataSource, UIPickerViewDelega
     // MARK:    'UIPickerDelegate'...
     
     open func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return "\(row)"
+        if pickerView == view.huePicker {
+            return "\(row + 1)º"
+        }
+        else {
+            return "\(row)"
+        }
     }
     
     open func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-//        let hue = view.huePicker.selectedRow(inComponent: 0)
-//        let saturation = view.saturationPicker.selectedRow(inComponent: 0)
-//        let brightness = view.brightnessPicker.selectedRow(inComponent: 0)
-//        
-//        selectedColor = UIColor(hue: hue§, saturation: <#T##CGFloat#>, brightness: <#T##CGFloat#>, alpha: <#T##CGFloat#>)
-//        
-////        selectedColor = UIColor.create(red: UInt8(view.redPicker.selectedRow(inComponent: 0)),
-////                                       green: UInt8(view.greenPicker.selectedRow(inComponent: 0)),
-////                                       blue: UInt8(view.bluePicker.selectedRow(inComponent: 0)))
-////        
-////        sendActions(for: .valueChanged)
+        let hue = Float(degrees: view.huePicker.selectedRow(inComponent: 0))
+        let saturation = Float(percent: view.saturationPicker.selectedRow(inComponent: 0))
+        let brightness = Float(percent: view.brightnessPicker.selectedRow(inComponent: 0))
+        
+        selectedColor = UIColor(hue: hue.cgfloat, saturation: saturation.cgfloat, brightness: brightness.cgfloat, alpha: 1.0)
+        
+        sendActions(for: .valueChanged)
     }
 }
