@@ -14,6 +14,18 @@ extension UIColor {
     
     // MARK:    RGB...
     
+    /**
+     Instantiates a `UIColor` object based on an *RGB* value.
+     
+     The `color` passed in is assumed to be a *hexadecimal* value. It is parsed
+     as: `AARRGGBB`.
+     
+     If the Alpha part is `0x00`, it is set to `0xFF`. This allows simple colors
+     to be created without always having to specify the Alpha.
+     
+     - parameter color:  The **RGB** of the color to be created.
+     - returns: A new color.
+    */
     public static func create(color: UInt32) -> UIColor {
         let red: UInt8 = UInt8((color >> 16) & 0xFF)
         let green: UInt8 = UInt8((color >> 8) & 0xFF)
@@ -23,7 +35,15 @@ extension UIColor {
         return create(red: red, green: green, blue: blue, alpha: (alpha == 0x00) ? 0xFF : alpha)
     }
     
-    
+    /**
+     Instantiates a `UIColor` object based on an *RGB* value.
+     
+     - parameter red:  Red component.
+     - parameter green:  Green component.
+     - parameter blue:  Blue component.
+     - parameter alpha:  Alpha component (optional - defaults to `0xFF`).
+     - returns: A new color.
+     */
     public static func create(red: UInt8, green: UInt8, blue: UInt8, alpha: UInt8 = 255) -> UIColor {
         return UIColor(red: CGFloat(Float(red) / 255.0),
                        green: CGFloat(Float(green) / 255.0),
@@ -31,6 +51,11 @@ extension UIColor {
                        alpha: CGFloat(Float(alpha) / 255.0))
     }
     
+    /**
+     The components of the color, as floating point values between `0.0` and `1.0`.
+     
+     A tuple of the form `(red, green, blue, alpha)`.
+     */
     public var rgbFloat: (red: Float, green: Float, blue: Float, alpha: Float)? {
         var red : CGFloat = 0
         var green : CGFloat = 0
@@ -44,6 +69,11 @@ extension UIColor {
         return (red.float, green.float, blue.float, alpha.float)
     }
     
+    /**
+     The components of the color.
+     
+     A tuple of the form `(red, green, blue, alpha)`.
+     */
     public var rgb: (red: UInt8, green: UInt8, blue: UInt8, alpha: UInt8)? {
         var red : CGFloat = 0
         var green : CGFloat = 0
@@ -57,6 +87,11 @@ extension UIColor {
         return (UInt8(red * 255.0), UInt8(green * 255.0), UInt8(blue * 255.0), UInt8(alpha * 255.0))
     }
     
+    /**
+        Components of the color, represented as a tuple.
+     
+        The *Alpha* component is not included.
+    */
     public var hex: String? {
         guard let rgb = rgb else {
             return nil
@@ -65,6 +100,11 @@ extension UIColor {
         return "(\(rgb.red.hex, rgb.green.hex, rgb.blue.hex))"
     }
     
+    /**
+     Components of the color, as a *hex* string.
+     
+     The *alpha* component is not included.
+    */
     public var hexString: String? {
         guard let rgb = rgb else {
             return nil
@@ -73,6 +113,12 @@ extension UIColor {
         return "\(rgb.red.hex)\(rgb.green.hex)\(rgb.blue.hex)"
     }
     
+    /**
+     The **HSL* attributes of the color.
+     
+     A tuple of the form `(hue, saturation, brightness, alpha)`. All values in the
+     tuple are between `0.0` and `1.0`.
+    */
     public var hsl: (hue: Float, saturation: Float, brightness: Float, alpha: Float)? {
         var hue: CGFloat = 0
         var saturation: CGFloat = 0
@@ -86,6 +132,9 @@ extension UIColor {
         return (hue.float, saturation.float, brightness.float, alpha.float)
     }
     
+    /**
+        The **HSL** complement of the color.
+    */
     public var complement: UIColor? {
         guard let hsl = hsl else {
             return nil
@@ -99,6 +148,9 @@ extension UIColor {
         return UIColor(hue: opposite.cgfloat, saturation: hsl.saturation.cgfloat, brightness: hsl.brightness.cgfloat, alpha: hsl.alpha.cgfloat)
     }
     
+    /**
+     The **HSL** adjacent color.
+    */
     public var adjacent: UIColor? {
         guard let rgb = rgb else {
             return nil
@@ -107,6 +159,9 @@ extension UIColor {
         return UIColor.create(red: rgb.red, green: rgb.green.flip, blue: rgb.blue, alpha: rgb.alpha)
     }
     
+    /**
+        Array of saturations for the color.
+    */
     public var saturationVariations: [UIColor]? {
         let numberOfSteps = 32.0
         let stepIncrement = 1.0 / numberOfSteps
@@ -128,6 +183,9 @@ extension UIColor {
         return variations
     }
     
+    /**
+     Array of varying brightness for the color.
+    */
     public var brightnessVariations: [UIColor]? {
         let numberOfSteps = 16.0
         let stepIncrement = 1.0 / numberOfSteps
