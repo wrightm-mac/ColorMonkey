@@ -37,7 +37,7 @@ public extension Float {
             return Int((100.0 * self).rounded())
         }
         set {
-            self = 1.0 / 100.0 * Float(newValue)
+            self = 1.0 / 10.0 * Float(newValue)
         }
     }
     

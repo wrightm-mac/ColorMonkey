@@ -87,7 +87,7 @@ open class HslColorPicker: UIControl, UIPickerViewDataSource, UIPickerViewDelega
             return 360
         }
         else {
-            return 101
+            return 100
         }
     }
     
@@ -99,16 +99,22 @@ open class HslColorPicker: UIControl, UIPickerViewDataSource, UIPickerViewDelega
             return "\(row + 1)º"
         }
         else {
-            return "\(row)"
+            return "\(row + 1)"
         }
     }
     
     open func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        let hue = Float(degrees: view.huePicker.selectedRow(inComponent: 0))
-        let saturation = Float(percent: view.saturationPicker.selectedRow(inComponent: 0))
-        let brightness = Float(percent: view.brightnessPicker.selectedRow(inComponent: 0))
+        let hue = CGFloat(degrees: view.huePicker.selectedRow(inComponent: 0))
+        let saturation = CGFloat(percent: view.saturationPicker.selectedRow(inComponent: 0))
+        let brightness = CGFloat(percent: view.brightnessPicker.selectedRow(inComponent: 0))
         
-        selectedColor = UIColor(hue: hue.cgfloat, saturation: saturation.cgfloat, brightness: brightness.cgfloat, alpha: 1.0)
+        // NOTE:    Setting saturation or brightness to 0.0 makes hue reset to 0.0, so
+        //          shift them up by a tiny amount (if necessary)..!
+        
+        selectedColor = UIColor(hue: hue,
+                                saturation: saturation > 0.0 ? saturation : 0.0001,
+                                brightness: brightness > 0.0 ? brightness : 0.0001,
+                                alpha: 1.0)
         
         sendActions(for: .valueChanged)
     }

@@ -15,7 +15,7 @@
             <rect key="frame" x="0.0" y="0.0" width="512" height="142"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LT9-q9-czF">
+                <pickerView contentMode="scaleToFill" fixedFrame="YES" showsSelectionIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LT9-q9-czF">
                     <rect key="frame" x="20" y="7" width="114" height="128"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                     <connections>
