@@ -48,8 +48,8 @@ class MainViewController: UIViewController, ColorPaletteDelegate {
         rgbPicker.selectedColor = color
         hslPicker.selectedColor = color
         
-        colorPalette.colors = color.saturationVariations
-        brightnessPalette.colors = color.brightnessVariations
+        colorPalette.colors = color.saturationRange
+        brightnessPalette.colors = color.brightnessRange
     }
     
     

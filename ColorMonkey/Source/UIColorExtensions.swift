@@ -165,7 +165,7 @@ extension UIColor {
     /**
         Array of saturations for the color.
     */
-    public var saturationVariations: [UIColor]? {
+    public var saturationRange: [UIColor]? {
         let numberOfSteps = 32.0
         let stepIncrement = 1.0 / numberOfSteps
         
@@ -189,7 +189,7 @@ extension UIColor {
     /**
      Array of varying brightness for the color.
     */
-    public var brightnessVariations: [UIColor]? {
+    public var brightnessRange: [UIColor]? {
         let numberOfSteps = 16.0
         let stepIncrement = 1.0 / numberOfSteps
         
