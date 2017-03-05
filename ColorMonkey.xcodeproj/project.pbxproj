@@ -31,6 +31,7 @@
 		24BD63491E65A4CA008454B0 /* HslColorPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BD63481E65A4CA008454B0 /* HslColorPickerView.swift */; };
 		24BD634B1E65BE35008454B0 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BD634A1E65BE35008454B0 /* StringExtensions.swift */; };
 		24BD634D1E65BEFA008454B0 /* UInt8Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BD634C1E65BEFA008454B0 /* UInt8Extensions.swift */; };
+		24F349C41E6C630F0080A172 /* StandardPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F349C31E6C630F0080A172 /* StandardPalette.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		24BD63481E65A4CA008454B0 /* HslColorPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HslColorPickerView.swift; path = Source/HslColorPickerView.swift; sourceTree = "<group>"; };
 		24BD634A1E65BE35008454B0 /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringExtensions.swift; path = Source/StringExtensions.swift; sourceTree = "<group>"; };
 		24BD634C1E65BEFA008454B0 /* UInt8Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UInt8Extensions.swift; path = Source/UInt8Extensions.swift; sourceTree = "<group>"; };
+		24F349C31E6C630F0080A172 /* StandardPalette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StandardPalette.swift; path = Source/StandardPalette.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +130,7 @@
 				241331301E686F5800E96B11 /* RgbColorPicker.swift */,
 				241331341E686FDD00E96B11 /* RgbColorPicker.xib */,
 				241331321E686FAE00E96B11 /* RgbColorPickerView.swift */,
+				24F349C31E6C630F0080A172 /* StandardPalette.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -240,6 +243,7 @@
 			files = (
 				24BD634D1E65BEFA008454B0 /* UInt8Extensions.swift in Sources */,
 				24BD632C1E659CC8008454B0 /* MainViewController.swift in Sources */,
+				24F349C41E6C630F0080A172 /* StandardPalette.swift in Sources */,
 				24A4B6E51E6720A200ED2751 /* ColorPaletteCellView.swift in Sources */,
 				242D88141E66F3FB00D5DA66 /* FloatExtensions.swift in Sources */,
 				242D88121E66EDE200D5DA66 /* CGFloatExtensions.swift in Sources */,

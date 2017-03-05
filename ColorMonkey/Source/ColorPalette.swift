@@ -16,7 +16,7 @@ open class ColorPalette: UIView, UICollectionViewDataSource, UICollectionViewDel
     
     @IBInspectable open var colors: [UIColor]? = [UIColor]() {
         didSet {
-            view.reloadData()
+            reloadData()
         }
     }
     
@@ -43,19 +43,19 @@ open class ColorPalette: UIView, UICollectionViewDataSource, UICollectionViewDel
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
-        view = addSubviewFromNib() as! ColorPaletteView
+        view = addSubviewFromNib("ColorPalette") as! ColorPaletteView
     }
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
         
-        view = addSubviewFromNib() as! ColorPaletteView
+        view = addSubviewFromNib("ColorPalette") as! ColorPaletteView
     }
     
     public convenience init() {
         self.init(frame: CGRect(x: 0.0, y: 0.0, width: 10.0, height: 10.0))
         
-        view = addSubviewFromNib() as! ColorPaletteView
+        view = addSubviewFromNib("ColorPalette") as! ColorPaletteView
     }
     
     
@@ -88,6 +88,13 @@ open class ColorPalette: UIView, UICollectionViewDataSource, UICollectionViewDel
         return cell
     }
 
+    
+    // MARK:    Methods...
+    
+    open func reloadData() {
+        view.reloadData()
+    }
+    
     
     // MARK:    'UICollectionViewDelegate'...
     
