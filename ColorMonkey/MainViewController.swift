@@ -24,7 +24,7 @@ class MainViewController: UIViewController, ColorPaletteDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let firstColor = UIColor.create(red: 0x6D, green: 0x9B, blue: 0xc3)
+        let firstColor = UIColor(forRed: 0x6D, green: 0x9B, blue: 0xc3)
         
         rgbPicker.selectedColor = firstColor
         hslPicker.selectedColor = firstColor

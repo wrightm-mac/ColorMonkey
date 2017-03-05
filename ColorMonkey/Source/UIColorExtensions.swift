@@ -12,7 +12,7 @@ import UIKit
 
 extension UIColor {
     
-    // MARK:    RGB...
+    // MARK:    Initialisers...
     
     /**
      Instantiates a `UIColor` object based on an *RGB* value.
@@ -25,14 +25,14 @@ extension UIColor {
      
      - parameter color:  The **RGB** of the color to be created.
      - returns: A new color.
-    */
-    public static func create(color: UInt32) -> UIColor {
+     */
+    public convenience init(color: UInt32) {
         let red: UInt8 = UInt8((color >> 16) & 0xFF)
         let green: UInt8 = UInt8((color >> 8) & 0xFF)
         let blue: UInt8 = UInt8(color & 0xFF)
         let alpha: UInt8 = UInt8((color >> 24) & 0xFF)
-        
-        return create(red: red, green: green, blue: blue, alpha: (alpha == 0x00) ? 0xFF : alpha)
+    
+        self.init(forRed: red, green: green, blue: blue, alpha: (alpha == 0x00) ? 0xFF : alpha)
     }
     
     /**
@@ -44,12 +44,15 @@ extension UIColor {
      - parameter alpha:  Alpha component (optional - defaults to `0xFF`).
      - returns: A new color.
      */
-    public static func create(red: UInt8, green: UInt8, blue: UInt8, alpha: UInt8 = 255) -> UIColor {
-        return UIColor(red: CGFloat(Float(red) / 255.0),
+    public convenience init(forRed: UInt8, green: UInt8, blue: UInt8, alpha: UInt8 = 255) {
+        self.init(red: CGFloat(Float(forRed) / 255.0),
                        green: CGFloat(Float(green) / 255.0),
                        blue: CGFloat(Float(blue) / 255.0),
                        alpha: CGFloat(Float(alpha) / 255.0))
     }
+    
+    
+    // MARK:    RGB...
     
     /**
      The components of the color, as floating point values between `0.0` and `1.0`.
@@ -156,7 +159,7 @@ extension UIColor {
             return nil
         }
         
-        return UIColor.create(red: rgb.red, green: rgb.green.flip, blue: rgb.blue, alpha: rgb.alpha)
+        return UIColor(forRed: rgb.red, green: rgb.green.flip, blue: rgb.blue, alpha: rgb.alpha)
     }
     
     /**

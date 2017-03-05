@@ -94,7 +94,7 @@ open class RgbColorPicker: UIControl, UIPickerViewDataSource, UIPickerViewDelega
     }
     
     open func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        selectedColor = UIColor.create(red: UInt8(view.redPicker.selectedRow(inComponent: 0)),
+        selectedColor = UIColor(forRed: UInt8(view.redPicker.selectedRow(inComponent: 0)),
                                        green: UInt8(view.greenPicker.selectedRow(inComponent: 0)),
                                        blue: UInt8(view.bluePicker.selectedRow(inComponent: 0)))
         
