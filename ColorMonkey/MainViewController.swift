@@ -30,6 +30,9 @@ class MainViewController: UIViewController, ColorPaletteDelegate {
         
         colorPalette.delegate = self
         
+        colorView.applyBorder(cornerSize: .small, width: .thin, color: .black)
+        complementView.applyBorder(cornerSize: .small, width: .thin, color: .black)
+        
         show(color: rgbPicker.selectedColor)
     }
     
