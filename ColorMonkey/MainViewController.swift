@@ -13,6 +13,7 @@ class MainViewController: UIViewController, ColorPaletteDelegate {
 
     @IBOutlet weak var rgbPicker: RgbColorPicker!
     @IBOutlet weak var hslPicker: HslColorPicker!
+    @IBOutlet weak var rgbSlider: RgbColorSlider!
     @IBOutlet weak var colorView: UIView!
     @IBOutlet weak var complementView: UIView!
     @IBOutlet weak var colorPalette: StandardPalette!
@@ -48,6 +49,7 @@ class MainViewController: UIViewController, ColorPaletteDelegate {
         rgbPicker.selectedColor = color
         hslPicker.selectedColor = color
         
+        rgbSlider.selectedColor = color
     }
     
     
@@ -65,6 +67,10 @@ class MainViewController: UIViewController, ColorPaletteDelegate {
     }
     
     @IBAction func hslValueChanged(_ sender: HslColorPicker) {
+        show(color: sender.selectedColor)
+    }
+    
+    @IBAction func rgbSliderValueChanged(_ sender: RgbColorSlider) {
         show(color: sender.selectedColor)
     }
 }

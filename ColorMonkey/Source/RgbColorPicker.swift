@@ -12,7 +12,6 @@ import UIKit
 @IBDesignable
 open class RgbColorPicker: UIControl, UIPickerViewDataSource, UIPickerViewDelegate {
     
-    
     // MARK:    Inspectables...
     
     @IBInspectable open var showHexadecimal: Bool = true
