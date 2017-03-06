@@ -37,20 +37,14 @@ open class StandardPalette: ColorPalette {
     
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        
-        createColors()
     }
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
-        
-        createColors()
     }
     
     public convenience init() {
         self.init(frame: CGRect(x: 0.0, y: 0.0, width: 10.0, height: 10.0))
-        
-        createColors()
     }
     
 
@@ -59,7 +53,7 @@ open class StandardPalette: ColorPalette {
     override open func awakeFromNib() {
         super.awakeFromNib()
         
-        print("StandardPalette.\(#function)")
+        createColors()
     }
     
     
@@ -67,8 +61,6 @@ open class StandardPalette: ColorPalette {
     
     private func createColors() {
         var newColors = [UIColor]()
-        
-        print("*** stepCount=\(stepCount)")
         
         let stepIncrement: Float = 0.99 / Float(stepCount - 1)
         let colorSaturation = CGFloat(percent: saturation)
@@ -78,8 +70,6 @@ open class StandardPalette: ColorPalette {
         for _ in 0..<stepCount {
             let color = UIColor(hue: step.cgfloat, saturation: colorSaturation, brightness: colorBrightness, alpha: 1.0)
             newColors.append(color)
-            
-            print("---> color=\(color.hsl?.hue.degrees)")
             
             step += stepIncrement
         }
