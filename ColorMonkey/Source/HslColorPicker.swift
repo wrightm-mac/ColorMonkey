@@ -28,7 +28,7 @@ open class HslColorPicker: UIControl, UIPickerViewDataSource, UIPickerViewDelega
     
     // MARK:    Fields...
     
-    private var view: HslColorPickerView!
+    private weak var view: HslColorPickerView!
     
     
     // MARK:    Initialisers...

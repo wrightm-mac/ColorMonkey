@@ -28,7 +28,7 @@ open class RgbColorPicker: UIControl, UIPickerViewDataSource, UIPickerViewDelega
     
     // MARK:    Fields...
     
-    private var view: RgbColorPickerView!
+    private weak var view: RgbColorPickerView!
     
     
     // MARK:    Initialisers...

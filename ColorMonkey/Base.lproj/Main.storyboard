@@ -62,7 +62,7 @@
                                 </connections>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Snk-lg-aC5" customClass="StandardPalette" customModule="ColorMonkey" customModuleProvider="target">
-                                <rect key="frame" x="16" y="200" width="343" height="342"/>
+                                <rect key="frame" x="16" y="331" width="343" height="211"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="stepCount">
@@ -70,14 +70,24 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fyI-2I-J40" customClass="RgbColorSlider" customModule="ColorMonkey" customModuleProvider="target">
+                                <rect key="frame" x="16" y="200" width="343" height="123"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="123" id="yoC-Ko-HgO"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="l4L-G2-3Ye" secondAttribute="trailing" constant="6" id="9zI-X6-Eog"/>
                             <constraint firstItem="SZ8-Ds-zbU" firstAttribute="top" secondItem="Snk-lg-aC5" secondAttribute="bottom" constant="8" id="BQJ-I6-Pgg"/>
-                            <constraint firstItem="Snk-lg-aC5" firstAttribute="top" secondItem="lNm-TS-7DL" secondAttribute="bottom" constant="8" id="OET-cs-j5x"/>
+                            <constraint firstItem="fyI-2I-J40" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="Cu9-lf-xlW"/>
+                            <constraint firstItem="fyI-2I-J40" firstAttribute="top" secondItem="lNm-TS-7DL" secondAttribute="bottom" constant="8" id="NS9-lk-ke9"/>
+                            <constraint firstItem="Snk-lg-aC5" firstAttribute="top" secondItem="lNm-TS-7DL" secondAttribute="bottom" constant="139" id="OET-cs-j5x"/>
                             <constraint firstItem="l4s-3h-oor" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="OLS-9c-HtW"/>
                             <constraint firstItem="l4L-G2-3Ye" firstAttribute="top" secondItem="SZ8-Ds-zbU" secondAttribute="bottom" constant="13" id="WlC-bW-MDM"/>
+                            <constraint firstItem="fyI-2I-J40" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="XuP-9Z-aZK"/>
                             <constraint firstItem="Snk-lg-aC5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="cfV-Ef-Pv0"/>
                             <constraint firstItem="lNm-TS-7DL" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="d04-YI-whs"/>
                             <constraint firstAttribute="trailing" secondItem="SZ8-Ds-zbU" secondAttribute="trailing" constant="6" id="eRe-ob-8Je"/>
