@@ -68,7 +68,9 @@ open class StandardPalette: ColorPalette {
     private func createColors() {
         var newColors = [UIColor]()
         
-        let stepIncrement: Float = 1.0 / Float(stepCount)
+        print("*** stepCount=\(stepCount)")
+        
+        let stepIncrement: Float = 0.99 / Float(stepCount - 1)
         let colorSaturation = CGFloat(percent: saturation)
         let colorBrightness = CGFloat(percent: brightness)
         
@@ -76,6 +78,8 @@ open class StandardPalette: ColorPalette {
         for _ in 0..<stepCount {
             let color = UIColor(hue: step.cgfloat, saturation: colorSaturation, brightness: colorBrightness, alpha: 1.0)
             newColors.append(color)
+            
+            print("---> color=\(color.hsl?.hue.degrees)")
             
             step += stepIncrement
         }

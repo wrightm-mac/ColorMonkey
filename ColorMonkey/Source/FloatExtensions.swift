@@ -66,7 +66,7 @@ public extension Float {
     /**
      Degrees representation.
      
-     Value between `0.0` and `1.0'.
+     Value between `0.0` and `1.0`.
     */
     public var degrees: Int {
         get {

@@ -41,12 +41,10 @@ class MainViewController: UIViewController, ColorPaletteDelegate {
         
         colorView.backgroundColor = color
         complementView.backgroundColor = color.complement
-        complementView.backgroundColor = color.adjacent
         
         rgbPicker.selectedColor = color
         hslPicker.selectedColor = color
         
-        //colorPalette.colors = color.saturationRange
     }
     
     

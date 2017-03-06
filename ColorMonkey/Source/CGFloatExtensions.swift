@@ -46,4 +46,35 @@ public extension CGFloat {
     public var float: Float {
         return Float(self)
     }
+    
+    
+    // MARK:    Percent & degrees...
+    
+    /**
+     Percentage representation.
+     
+     Value between `0` and `1'.
+     */
+    public var percent: Int {
+        get {
+            return Int((100.0 * self).rounded())
+        }
+        set {
+            self = 1.0 / 10.0 * CGFloat(newValue)
+        }
+    }
+    
+    /**
+     Degrees representation.
+     
+     Value between `0.0` and `1.0'.
+     */
+    public var degrees: Int {
+        get {
+            return Int((360.0 * self).rounded())
+        }
+        set {
+            self = 1.0 / 360.0 * CGFloat(newValue)
+        }
+    }
 }
