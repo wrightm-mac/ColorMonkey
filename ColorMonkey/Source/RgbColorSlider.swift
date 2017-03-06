@@ -63,8 +63,6 @@ open class RgbColorSlider: UIControl {
     // MARK:    Methods...
     
     internal func sliderValueChanged(_ values: (red: UInt8, green: UInt8, blue: UInt8)) {
-        print("RgbColorSlider.\(#function) - values=\(values)")
-        
         selectedColor = UIColor(forRed: values.red, green: values.green, blue: values.blue)
         
         sendActions(for: .valueChanged)

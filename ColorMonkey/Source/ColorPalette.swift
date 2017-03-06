@@ -10,7 +10,7 @@ import UIKit
 
 
 @IBDesignable
-open class ColorPalette: UIView, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+open class ColorPalette: UIControl, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     // MARK:    Inspectables...
     

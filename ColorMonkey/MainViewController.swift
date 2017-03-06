@@ -16,7 +16,6 @@ class MainViewController: UIViewController, ColorPaletteDelegate {
     @IBOutlet weak var rgbSlider: RgbColorSlider!
     @IBOutlet weak var colorView: UIView!
     @IBOutlet weak var complementView: UIView!
-    @IBOutlet weak var colorPalette: StandardPalette!
 
     
     // MARK:    Overrides...
@@ -28,8 +27,6 @@ class MainViewController: UIViewController, ColorPaletteDelegate {
         
         rgbPicker.selectedColor = firstColor
         hslPicker.selectedColor = firstColor
-        
-        colorPalette.delegate = self
         
         colorView.applyBorder(cornerSize: .small, width: .thin, color: .black)
         complementView.applyBorder(cornerSize: .small, width: .thin, color: .black)
@@ -50,13 +47,6 @@ class MainViewController: UIViewController, ColorPaletteDelegate {
         hslPicker.selectedColor = color
         
         rgbSlider.selectedColor = color
-    }
-    
-    
-    // MARK:    'ColorPaletteDelegate'...
-    
-    func colorPalette(_ colorPalette: ColorPalette, selectedColor: UIColor) {
-        show(color: selectedColor)
     }
     
     
