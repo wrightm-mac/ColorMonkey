@@ -26,7 +26,7 @@ class MainViewController: UIViewController, ColorPaletteDelegate {
         colorView.applyBorder(cornerSize: .small, width: .thick, color: .black)
         complementButton.applyBorder(cornerSize: .small, width: .thick, color: .black)
         
-        show(color: UIColor(forRed: 0x6D, green: 0x9B, blue: 0xc3))
+        show(color: UIColor(forRed: 0x14, green: 0xCB, blue: 0xCB))
     }
     
     
