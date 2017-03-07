@@ -70,8 +70,8 @@
                                     <action selector="complementTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CMw-oo-pCS"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RGB" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F7L-zp-d7L">
-                                <rect key="frame" x="16" y="28" width="343" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RGB" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F7L-zp-d7L" customClass="RotatingLabel" customModule="ColorMonkey" customModuleProvider="target">
+                                <rect key="frame" x="16" y="27.999999999999979" width="343" height="21.000000000000043"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="shO-t5-r9Q"/>
                                 </constraints>

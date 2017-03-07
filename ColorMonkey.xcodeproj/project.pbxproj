@@ -15,6 +15,7 @@
 		2430ED901E6EC9F6006F2889 /* HslColorSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2430ED8F1E6EC9F6006F2889 /* HslColorSlider.swift */; };
 		2430ED921E6ECA2A006F2889 /* HslColorSlider.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2430ED911E6ECA2A006F2889 /* HslColorSlider.xib */; };
 		2430ED941E6ECA6C006F2889 /* HslColorSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2430ED931E6ECA6C006F2889 /* HslColorSliderView.swift */; };
+		2479CB1F1E6F01F700C85A5A /* RotatingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2479CB1E1E6F01F700C85A5A /* RotatingLabel.swift */; };
 		24852B141E6DAA3600E021D0 /* RgbColorSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24852B131E6DAA3600E021D0 /* RgbColorSlider.swift */; };
 		24852B161E6DAACA00E021D0 /* RgbColorSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24852B151E6DAACA00E021D0 /* RgbColorSliderView.swift */; };
 		24852B181E6DAAE500E021D0 /* RgbColorSlider.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24852B171E6DAAE500E021D0 /* RgbColorSlider.xib */; };
@@ -49,6 +50,7 @@
 		2430ED8F1E6EC9F6006F2889 /* HslColorSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HslColorSlider.swift; path = Source/HslColorSlider.swift; sourceTree = "<group>"; };
 		2430ED911E6ECA2A006F2889 /* HslColorSlider.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HslColorSlider.xib; path = Source/HslColorSlider.xib; sourceTree = "<group>"; };
 		2430ED931E6ECA6C006F2889 /* HslColorSliderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HslColorSliderView.swift; path = Source/HslColorSliderView.swift; sourceTree = "<group>"; };
+		2479CB1E1E6F01F700C85A5A /* RotatingLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RotatingLabel.swift; path = Source/RotatingLabel.swift; sourceTree = "<group>"; };
 		24852B131E6DAA3600E021D0 /* RgbColorSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RgbColorSlider.swift; path = Source/RgbColorSlider.swift; sourceTree = "<group>"; };
 		24852B151E6DAACA00E021D0 /* RgbColorSliderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RgbColorSliderView.swift; path = Source/RgbColorSliderView.swift; sourceTree = "<group>"; };
 		24852B171E6DAAE500E021D0 /* RgbColorSlider.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RgbColorSlider.xib; path = Source/RgbColorSlider.xib; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 				24852B171E6DAAE500E021D0 /* RgbColorSlider.xib */,
 				24852B151E6DAACA00E021D0 /* RgbColorSliderView.swift */,
 				24F349C31E6C630F0080A172 /* StandardPalette.swift */,
+				2479CB1E1E6F01F700C85A5A /* RotatingLabel.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 				24BD634D1E65BEFA008454B0 /* UInt8Extensions.swift in Sources */,
 				24BD632C1E659CC8008454B0 /* MainViewController.swift in Sources */,
 				24F349C41E6C630F0080A172 /* StandardPalette.swift in Sources */,
+				2479CB1F1E6F01F700C85A5A /* RotatingLabel.swift in Sources */,
 				24852B161E6DAACA00E021D0 /* RgbColorSliderView.swift in Sources */,
 				24A4B6E51E6720A200ED2751 /* ColorPaletteCellView.swift in Sources */,
 				2430ED941E6ECA6C006F2889 /* HslColorSliderView.swift in Sources */,
