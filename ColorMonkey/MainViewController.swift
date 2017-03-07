@@ -14,6 +14,7 @@ class MainViewController: UIViewController, ColorPaletteDelegate {
     @IBOutlet weak var rgbPicker: RgbColorPicker!
     @IBOutlet weak var hslPicker: HslColorPicker!
     @IBOutlet weak var rgbSlider: RgbColorSlider!
+    @IBOutlet weak var hslSlider: HslColorSlider!
     @IBOutlet weak var colorView: UIView!
     @IBOutlet weak var complementView: UIView!
 
@@ -23,15 +24,10 @@ class MainViewController: UIViewController, ColorPaletteDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let firstColor = UIColor(forRed: 0x6D, green: 0x9B, blue: 0xc3)
+        colorView.applyBorder(cornerSize: .small, width: .thick, color: .black)
+        complementView.applyBorder(cornerSize: .small, width: .thick, color: .black)
         
-        rgbPicker.selectedColor = firstColor
-        hslPicker.selectedColor = firstColor
-        
-        colorView.applyBorder(cornerSize: .small, width: .thin, color: .black)
-        complementView.applyBorder(cornerSize: .small, width: .thin, color: .black)
-        
-        show(color: rgbPicker.selectedColor)
+        show(color: UIColor(forRed: 0x6D, green: 0x9B, blue: 0xc3))
     }
     
     
@@ -45,6 +41,8 @@ class MainViewController: UIViewController, ColorPaletteDelegate {
         
         rgbPicker.selectedColor = color
         hslPicker.selectedColor = color
+        rgbSlider.selectedColor = color
+        hslSlider.selectedColor = color
         
         rgbSlider.selectedColor = color
     }
@@ -63,5 +61,8 @@ class MainViewController: UIViewController, ColorPaletteDelegate {
     @IBAction func rgbSliderValueChanged(_ sender: RgbColorSlider) {
         show(color: sender.selectedColor)
     }
+    
+    @IBAction func hslSliderValueChanged(_ sender: HslColorSlider) {
+        show(color: sender.selectedColor)
+    }
 }
-

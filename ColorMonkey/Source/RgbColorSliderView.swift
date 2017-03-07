@@ -26,10 +26,6 @@ class RgbColorSliderView: UIView {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        redSlider.thumbTintColor = .red
-        greenSlider.thumbTintColor = .green
-        blueSlider.thumbTintColor = .blue
-        
         applyBorder(cornerSize: .medium, width: .medium, color: .black)
     }
     
@@ -48,8 +44,7 @@ class RgbColorSliderView: UIView {
     // MARK:    Methods...
     func notifySliderValueChanged() {
         if let parent = parent {
-            let values = (red: UInt8(redSlider.value.rounded()), green: UInt8(greenSlider.value.rounded()), blue: UInt8(blueSlider.value.rounded()))
-            parent.sliderValueChanged(values)
+            parent.sliderValueChanged(red: UInt8(redSlider.value.rounded()), green: UInt8(greenSlider.value.rounded()), blue: UInt8(blueSlider.value.rounded()))
         }
     }
     

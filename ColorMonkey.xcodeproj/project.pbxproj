@@ -12,6 +12,9 @@
 		241331351E686FDD00E96B11 /* RgbColorPicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 241331341E686FDD00E96B11 /* RgbColorPicker.xib */; };
 		242D88121E66EDE200D5DA66 /* CGFloatExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242D88111E66EDE200D5DA66 /* CGFloatExtensions.swift */; };
 		242D88141E66F3FB00D5DA66 /* FloatExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242D88131E66F3FB00D5DA66 /* FloatExtensions.swift */; };
+		2430ED901E6EC9F6006F2889 /* HslColorSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2430ED8F1E6EC9F6006F2889 /* HslColorSlider.swift */; };
+		2430ED921E6ECA2A006F2889 /* HslColorSlider.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2430ED911E6ECA2A006F2889 /* HslColorSlider.xib */; };
+		2430ED941E6ECA6C006F2889 /* HslColorSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2430ED931E6ECA6C006F2889 /* HslColorSliderView.swift */; };
 		24852B141E6DAA3600E021D0 /* RgbColorSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24852B131E6DAA3600E021D0 /* RgbColorSlider.swift */; };
 		24852B161E6DAACA00E021D0 /* RgbColorSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24852B151E6DAACA00E021D0 /* RgbColorSliderView.swift */; };
 		24852B181E6DAAE500E021D0 /* RgbColorSlider.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24852B171E6DAAE500E021D0 /* RgbColorSlider.xib */; };
@@ -43,6 +46,9 @@
 		241331341E686FDD00E96B11 /* RgbColorPicker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RgbColorPicker.xib; path = Source/RgbColorPicker.xib; sourceTree = "<group>"; };
 		242D88111E66EDE200D5DA66 /* CGFloatExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CGFloatExtensions.swift; path = Source/CGFloatExtensions.swift; sourceTree = "<group>"; };
 		242D88131E66F3FB00D5DA66 /* FloatExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FloatExtensions.swift; path = Source/FloatExtensions.swift; sourceTree = "<group>"; };
+		2430ED8F1E6EC9F6006F2889 /* HslColorSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HslColorSlider.swift; path = Source/HslColorSlider.swift; sourceTree = "<group>"; };
+		2430ED911E6ECA2A006F2889 /* HslColorSlider.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HslColorSlider.xib; path = Source/HslColorSlider.xib; sourceTree = "<group>"; };
+		2430ED931E6ECA6C006F2889 /* HslColorSliderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HslColorSliderView.swift; path = Source/HslColorSliderView.swift; sourceTree = "<group>"; };
 		24852B131E6DAA3600E021D0 /* RgbColorSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RgbColorSlider.swift; path = Source/RgbColorSlider.swift; sourceTree = "<group>"; };
 		24852B151E6DAACA00E021D0 /* RgbColorSliderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RgbColorSliderView.swift; path = Source/RgbColorSliderView.swift; sourceTree = "<group>"; };
 		24852B171E6DAAE500E021D0 /* RgbColorSlider.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RgbColorSlider.xib; path = Source/RgbColorSlider.xib; sourceTree = "<group>"; };
@@ -133,6 +139,9 @@
 				24BD63441E65A3EA008454B0 /* HslColorPicker.swift */,
 				24BD63461E65A49D008454B0 /* HslColorPicker.xib */,
 				24BD63481E65A4CA008454B0 /* HslColorPickerView.swift */,
+				2430ED8F1E6EC9F6006F2889 /* HslColorSlider.swift */,
+				2430ED911E6ECA2A006F2889 /* HslColorSlider.xib */,
+				2430ED931E6ECA6C006F2889 /* HslColorSliderView.swift */,
 				241331301E686F5800E96B11 /* RgbColorPicker.swift */,
 				241331341E686FDD00E96B11 /* RgbColorPicker.xib */,
 				241331321E686FAE00E96B11 /* RgbColorPickerView.swift */,
@@ -234,6 +243,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				241331351E686FDD00E96B11 /* RgbColorPicker.xib in Resources */,
+				2430ED921E6ECA2A006F2889 /* HslColorSlider.xib in Resources */,
 				24A4B6E11E671DB400ED2751 /* ColorPalette.xib in Resources */,
 				24BD63471E65A49D008454B0 /* HslColorPicker.xib in Resources */,
 				24BD63341E659CC9008454B0 /* LaunchScreen.storyboard in Resources */,
@@ -256,6 +266,7 @@
 				24F349C41E6C630F0080A172 /* StandardPalette.swift in Sources */,
 				24852B161E6DAACA00E021D0 /* RgbColorSliderView.swift in Sources */,
 				24A4B6E51E6720A200ED2751 /* ColorPaletteCellView.swift in Sources */,
+				2430ED941E6ECA6C006F2889 /* HslColorSliderView.swift in Sources */,
 				242D88141E66F3FB00D5DA66 /* FloatExtensions.swift in Sources */,
 				242D88121E66EDE200D5DA66 /* CGFloatExtensions.swift in Sources */,
 				24A4B6E71E672BFB00ED2751 /* ColorPaletteDelegate.swift in Sources */,
@@ -263,6 +274,7 @@
 				241331311E686F5800E96B11 /* RgbColorPicker.swift in Sources */,
 				24852B141E6DAA3600E021D0 /* RgbColorSlider.swift in Sources */,
 				241331331E686FAE00E96B11 /* RgbColorPickerView.swift in Sources */,
+				2430ED901E6EC9F6006F2889 /* HslColorSlider.swift in Sources */,
 				24BD63411E65A261008454B0 /* UIViewExtensions.swift in Sources */,
 				24BD63491E65A4CA008454B0 /* HslColorPickerView.swift in Sources */,
 				24BD632A1E659CC8008454B0 /* AppDelegate.swift in Sources */,

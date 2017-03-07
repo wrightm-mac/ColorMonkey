@@ -1,16 +1,15 @@
 //
-//  RgbColorSlider.swift
+//  HslColorSlider.swift
 //  ColorMonkey
 //
-//  Created by Michael Wright on 06/03/2017.
+//  Created by Michael Wright on 07/03/2017.
 //  Copyright © 2017 wrightm@mac.com. All rights reserved.
 //
 
 import UIKit
 
-
 @IBDesignable
-open class RgbColorSlider: UIControl {
+open class HslColorSlider: UIControl {
     
     // MARK:    Inspectables...
     
@@ -20,10 +19,10 @@ open class RgbColorSlider: UIControl {
         }
     }
     
-
+    
     // MARK:    Fields...
     
-    private weak var view: RgbColorSliderView!
+    private weak var view: HslColorSliderView!
     
     
     // MARK:    Initialisers...
@@ -31,21 +30,21 @@ open class RgbColorSlider: UIControl {
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
-        view = addSubviewFromNib() as! RgbColorSliderView
+        view = addSubviewFromNib() as! HslColorSliderView
     }
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
         
-        view = addSubviewFromNib() as! RgbColorSliderView
+        view = addSubviewFromNib() as! HslColorSliderView
     }
     
     public convenience init() {
         self.init(frame: CGRect(x: 0.0, y: 0.0, width: 10.0, height: 10.0))
         
-        view = addSubviewFromNib() as! RgbColorSliderView
+        view = addSubviewFromNib() as! HslColorSliderView
     }
-
+    
     
     // MARK:    Overrides...
     
@@ -64,17 +63,17 @@ open class RgbColorSlider: UIControl {
     
     // MARK:    Methods...
     
-    internal func sliderValueChanged(red: UInt8, green: UInt8, blue: UInt8) {
-        selectedColor = UIColor(forRed: red, green: green, blue: blue)
+    internal func sliderValueChanged(hue: Int, saturation: Int, brightness: Int) {
+        selectedColor = UIColor(hue: CGFloat(degrees: hue), saturation: CGFloat(percent: saturation), brightness: CGFloat(percent: brightness), alpha: 1.0)
         
         sendActions(for: .valueChanged)
     }
     
     open func setColor(_ color: UIColor) {
-        if let rgb = color.rgb {
-            view.redSlider.value = Float(rgb.red)
-            view.greenSlider.value = Float(rgb.green)
-            view.blueSlider.value = Float(rgb.blue)
+        if let hsl = color.hsl {
+            view.hueSlider.value = Float(hsl.hue.degrees)
+            view.saturationSlider.value = Float(hsl.saturation.percent)
+            view.brightnessSlider.value = Float(hsl.brightness.percent)
         }
     }
 }
