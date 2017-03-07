@@ -57,6 +57,8 @@ open class RgbColorSlider: UIControl {
     
     open override func layoutSubviews() {
         super.layoutSubviews()
+        
+        setColor(selectedColor)
     }
     
     
