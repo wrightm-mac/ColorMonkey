@@ -18,11 +18,18 @@ public enum LabelOrientation {
 
 
 @IBDesignable
-open class RotatingLabel: UILabel {
+open class RotatingLabel: UIView {
 
     // MARK:    Inspectables...
     
-    @IBInspectable open var orientation: LabelOrientation = .rotate180
+    @IBInspectable open var orientation: LabelOrientation = .rotate270
+    
+    @IBInspectable open var text: String? = nil
+    
+    
+    // MARK:    Fields...
+    
+    private var label: UILabel = UILabel()
     
     
     // MARK:    Initialisers...
@@ -42,14 +49,25 @@ open class RotatingLabel: UILabel {
     
     // MARK:    Overrides...
     
+    open override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        label.numberOfLines = 0
+        addSubview(label)
+    }
+    
     open override func layoutSubviews() {
         super.layoutSubviews()
         
+        label.text = text
+        label.debug(.yellow)
+        label.frame = CGRect(x: 0.0, y: 0.0, width: frame.width, height: frame.height)
+        
         switch orientation {
-            case .none: transform = CGAffineTransform(rotationAngle: 0)
-            case .rotate90: transform = CGAffineTransform(rotationAngle: CGFloat.pi / 2)
-            case .rotate180: transform = CGAffineTransform(rotationAngle: CGFloat.pi)
-            case .rotate270: transform = CGAffineTransform(rotationAngle: -CGFloat.pi / 2)
+            case .none: label.transform = CGAffineTransform(rotationAngle: 0)
+            case .rotate90: label.transform = CGAffineTransform(rotationAngle: CGFloat.pi / 2)
+            case .rotate180: label.transform = CGAffineTransform(rotationAngle: CGFloat.pi)
+            case .rotate270: label.transform = CGAffineTransform(rotationAngle: -CGFloat.pi / 2)
         }
     }
 }
