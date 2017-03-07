@@ -16,8 +16,7 @@ class MainViewController: UIViewController, ColorPaletteDelegate {
     @IBOutlet weak var rgbSlider: RgbColorSlider!
     @IBOutlet weak var hslSlider: HslColorSlider!
     @IBOutlet weak var colorView: UIView!
-    @IBOutlet weak var complementView: UIView!
-
+    @IBOutlet weak var complementButton: UIButton!
     
     // MARK:    Overrides...
     
@@ -25,7 +24,7 @@ class MainViewController: UIViewController, ColorPaletteDelegate {
         super.viewDidLoad()
         
         colorView.applyBorder(cornerSize: .small, width: .thick, color: .black)
-        complementView.applyBorder(cornerSize: .small, width: .thick, color: .black)
+        complementButton.applyBorder(cornerSize: .small, width: .thick, color: .black)
         
         show(color: UIColor(forRed: 0x6D, green: 0x9B, blue: 0xc3))
     }
@@ -37,7 +36,7 @@ class MainViewController: UIViewController, ColorPaletteDelegate {
         color.debugPrint()
         
         colorView.backgroundColor = color
-        complementView.backgroundColor = color.complement
+        complementButton.backgroundColor = color.complement
         
         rgbPicker.selectedColor = color
         hslPicker.selectedColor = color
@@ -64,5 +63,11 @@ class MainViewController: UIViewController, ColorPaletteDelegate {
     
     @IBAction func hslSliderValueChanged(_ sender: HslColorSlider) {
         show(color: sender.selectedColor)
+    }
+    
+    @IBAction func complementTouchUpInside(_ sender: UIButton) {
+        if let color = sender.backgroundColor {
+            show(color: color)
+        }
     }
 }
