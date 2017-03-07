@@ -19,7 +19,7 @@ open class HslColorPicker: UIControl, UIPickerViewDataSource, UIPickerViewDelega
     
     @IBInspectable open var selectedColor: UIColor = .black {
         didSet {
-            selectColor(selectedColor)
+            setColor(selectedColor)
         }
     }
     
@@ -61,13 +61,13 @@ open class HslColorPicker: UIControl, UIPickerViewDataSource, UIPickerViewDelega
         view.backgroundColor = backgroundColor
         view.applyBorder(cornerSize: .medium, width: .medium, color: .black)
         
-        selectColor(selectedColor)
+        setColor(selectedColor)
     }
     
     
     // MARK:    Methods...
     
-    private func selectColor(_ color: UIColor) {
+    private func setColor(_ color: UIColor) {
         if let hsl = color.hsl {
             view.huePicker.selectRow(hsl.hue.degrees, inComponent: 0, animated: animateSelection)
             view.saturationPicker.selectRow(hsl.saturation.percent, inComponent: 0, animated: animateSelection)

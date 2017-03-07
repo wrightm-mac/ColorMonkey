@@ -18,7 +18,7 @@ open class RgbColorPicker: UIControl, UIPickerViewDataSource, UIPickerViewDelega
     
     @IBInspectable open var selectedColor: UIColor = .black {
         didSet {
-            selectColor(selectedColor)
+            setColor(selectedColor)
         }
     }
     
@@ -60,13 +60,13 @@ open class RgbColorPicker: UIControl, UIPickerViewDataSource, UIPickerViewDelega
         view.backgroundColor = backgroundColor
         view.applyBorder(cornerSize: .medium, width: .medium, color: .black)
         
-        selectColor(selectedColor)
+        setColor(selectedColor)
     }
     
     
     // MARK:    Methods...
     
-    private func selectColor(_ color: UIColor) {
+    open func setColor(_ color: UIColor) {
         if let rgb = color.rgb {
             view.redPicker.selectRow(Int(rgb.red), inComponent: 0, animated: animateSelection)
             view.greenPicker.selectRow(Int(rgb.green), inComponent: 0, animated: animateSelection)

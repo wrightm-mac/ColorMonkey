@@ -16,7 +16,7 @@ open class RgbColorSlider: UIControl {
     
     @IBInspectable open var selectedColor: UIColor = .black {
         didSet {
-            selectColor(selectedColor)
+            setColor(selectedColor)
         }
     }
     
@@ -68,7 +68,7 @@ open class RgbColorSlider: UIControl {
         sendActions(for: .valueChanged)
     }
     
-    private func selectColor(_ color: UIColor) {
+    open func setColor(_ color: UIColor) {
         if let rgb = color.rgb {
             view.redSlider.value = Float(rgb.red)
             view.greenSlider.value = Float(rgb.green)
