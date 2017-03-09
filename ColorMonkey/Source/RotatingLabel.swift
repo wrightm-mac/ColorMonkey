@@ -18,18 +18,20 @@ public enum LabelOrientation {
 
 
 @IBDesignable
-open class RotatingLabel: UIView {
+open class RotatingLabel: UILabel {
 
     // MARK:    Inspectables...
     
     @IBInspectable open var orientation: LabelOrientation = .rotate270
     
-    @IBInspectable open var text: String? = nil
+    @IBInspectable open var showLine: Bool = true
     
     
     // MARK:    Fields...
     
-    private var label: UILabel = UILabel()
+    private var preservedFrame: CGRect? = nil
+    
+    private var lineView: UIView? = nil
     
     
     // MARK:    Initialisers...
@@ -52,22 +54,33 @@ open class RotatingLabel: UIView {
     open override func awakeFromNib() {
         super.awakeFromNib()
         
-        label.numberOfLines = 0
-        addSubview(label)
+        // Kludge to stop the label resizing...
+        preservedFrame = frame
+        
+        if showLine {
+            lineView = UIView()
+            lineView!.backgroundColor = textColor
+            addSubview(lineView!)
+        }
     }
     
     open override func layoutSubviews() {
         super.layoutSubviews()
         
-        label.text = text
-        label.debug(.yellow)
-        label.frame = CGRect(x: 0.0, y: 0.0, width: frame.width, height: frame.height)
-        
         switch orientation {
-            case .none: label.transform = CGAffineTransform(rotationAngle: 0)
-            case .rotate90: label.transform = CGAffineTransform(rotationAngle: CGFloat.pi / 2)
-            case .rotate180: label.transform = CGAffineTransform(rotationAngle: CGFloat.pi)
-            case .rotate270: label.transform = CGAffineTransform(rotationAngle: -CGFloat.pi / 2)
+            case .none: transform = CGAffineTransform(rotationAngle: 0)
+            case .rotate90: transform = CGAffineTransform(rotationAngle: CGFloat.pi / 2)
+            case .rotate180: transform = CGAffineTransform(rotationAngle: CGFloat.pi)
+            case .rotate270: transform = CGAffineTransform(rotationAngle: -CGFloat.pi / 2)
+        }
+        
+        // Kludge to stop the label resizing...
+        if let preservedFrame = preservedFrame {
+            frame = CGRect(x: preservedFrame.origin.x, y: preservedFrame.origin.y, width: preservedFrame.width, height: preservedFrame.height)
+        }
+        
+        if let lineView = lineView {
+            lineView.frame = CGRect(x: 0.0, y: frame.width - 2.0, width: frame.height, height: 1.0)
         }
     }
 }

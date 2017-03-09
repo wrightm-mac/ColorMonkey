@@ -22,12 +22,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KBu-zx-CSW" customClass="RotatingLabel" customModule="ColorMonkey" customModuleProvider="target">
+                                <rect key="frame" x="22" y="28" width="22" height="227"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="22" id="Vtu-NY-5jJ"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="text" value="RGB"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l4L-G2-3Ye">
                                 <rect key="frame" x="16" y="513" width="251" height="144"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l4s-3h-oor" customClass="RgbColorPicker" customModule="ColorMonkey" customModuleProvider="target">
-                                <rect key="frame" x="42" y="28" width="317" height="109"/>
+                                <rect key="frame" x="49" y="28" width="310" height="109"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="109" id="pdk-ER-yfG"/>
@@ -52,7 +62,7 @@
                                 </connections>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fyI-2I-J40" customClass="RgbColorSlider" customModule="ColorMonkey" customModuleProvider="target">
-                                <rect key="frame" x="42" y="145" width="317" height="110"/>
+                                <rect key="frame" x="49" y="145" width="310" height="110"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="110" id="Y8j-bx-kR7"/>
@@ -89,24 +99,14 @@
                                     <action selector="hslSliderValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="mpL-fe-IcD"/>
                                 </connections>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KBu-zx-CSW" customClass="RotatingLabel" customModule="ColorMonkey" customModuleProvider="target">
-                                <rect key="frame" x="16" y="28" width="24" height="227"/>
-                                <color key="backgroundColor" red="0.42745098040000001" green="0.76470588240000004" blue="0.58431372550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="227" id="bAk-Wd-7QV"/>
-                                    <constraint firstAttribute="width" constant="24" id="tSX-8a-iQf"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="text" value="RGB"/>
-                                </userDefinedRuntimeAttributes>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="e8C-pN-GIH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="0Bn-6p-B36"/>
                             <constraint firstItem="l4s-3h-oor" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="31X-jS-kf7"/>
+                            <constraint firstItem="KBu-zx-CSW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="6" id="64I-jA-SbU"/>
                             <constraint firstItem="XAo-0S-hIt" firstAttribute="leading" secondItem="l4L-G2-3Ye" secondAttribute="trailing" constant="8" id="681-Gy-omK"/>
-                            <constraint firstItem="fyI-2I-J40" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="26" id="6Gg-6G-87S"/>
+                            <constraint firstItem="fyI-2I-J40" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="33" id="6Gg-6G-87S"/>
                             <constraint firstItem="e8C-pN-GIH" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="AHN-73-fmg"/>
                             <constraint firstItem="peQ-ej-H9Y" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="B7D-9j-DrV"/>
                             <constraint firstItem="peQ-ej-H9Y" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="B7u-pr-MXJ"/>
@@ -122,11 +122,11 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="XAo-0S-hIt" secondAttribute="bottom" constant="10" id="em4-Hy-hq8"/>
                             <constraint firstItem="l4L-G2-3Ye" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="kIQ-qC-dZo"/>
                             <constraint firstItem="fyI-2I-J40" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="lOX-tJ-kxy"/>
-                            <constraint firstItem="KBu-zx-CSW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="otv-KS-0Mu"/>
+                            <constraint firstItem="KBu-zx-CSW" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="oZm-BJ-HxF"/>
+                            <constraint firstItem="peQ-ej-H9Y" firstAttribute="top" secondItem="KBu-zx-CSW" secondAttribute="bottom" constant="22" id="pEp-db-36L"/>
                             <constraint firstItem="e8C-pN-GIH" firstAttribute="top" secondItem="lNm-TS-7DL" secondAttribute="bottom" constant="8" id="pPW-a8-kf6"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="l4L-G2-3Ye" secondAttribute="bottom" constant="10" id="qns-KV-dpw"/>
-                            <constraint firstItem="l4s-3h-oor" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="26" id="rD2-jA-Sdp"/>
-                            <constraint firstItem="KBu-zx-CSW" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="uEY-3U-uk3"/>
+                            <constraint firstItem="l4s-3h-oor" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="33" id="rD2-jA-Sdp"/>
                         </constraints>
                     </view>
                     <connections>
