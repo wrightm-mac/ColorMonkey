@@ -18,18 +18,22 @@ public enum LabelOrientation {
 
 
 @IBDesignable
-open class RotatingLabel: UILabel {
+open class RotatingLabel: UIControl {
 
     // MARK:    Inspectables...
     
     @IBInspectable open var orientation: LabelOrientation = .rotate270
+    
+    @IBInspectable open var text: String? = nil
     
     @IBInspectable open var showLine: Bool = true
     
     
     // MARK:    Fields...
     
-    private var preservedFrame: CGRect? = nil
+    //private var preservedFrame: CGRect? = nil
+    
+    private var label: UILabel = UILabel()
     
     private var lineView: UIView? = nil
     
@@ -54,12 +58,12 @@ open class RotatingLabel: UILabel {
     open override func awakeFromNib() {
         super.awakeFromNib()
         
-        // Kludge to stop the label resizing...
-        preservedFrame = frame
+        label.textAlignment = .left
+        addSubview(label)
         
         if showLine {
             lineView = UIView()
-            lineView!.backgroundColor = textColor
+            lineView!.backgroundColor = .black
             addSubview(lineView!)
         }
     }
@@ -68,19 +72,17 @@ open class RotatingLabel: UILabel {
         super.layoutSubviews()
         
         switch orientation {
-            case .none: transform = CGAffineTransform(rotationAngle: 0)
-            case .rotate90: transform = CGAffineTransform(rotationAngle: CGFloat.pi / 2)
-            case .rotate180: transform = CGAffineTransform(rotationAngle: CGFloat.pi)
-            case .rotate270: transform = CGAffineTransform(rotationAngle: -CGFloat.pi / 2)
+            case .none: label.transform = CGAffineTransform(rotationAngle: 0)
+            case .rotate90: label.transform = CGAffineTransform(rotationAngle: CGFloat.pi / 2)
+            case .rotate180: label.transform = CGAffineTransform(rotationAngle: CGFloat.pi)
+            case .rotate270: label.transform = CGAffineTransform(rotationAngle: -CGFloat.pi / 2)
         }
         
-        // Kludge to stop the label resizing...
-        if let preservedFrame = preservedFrame {
-            frame = CGRect(x: preservedFrame.origin.x, y: preservedFrame.origin.y, width: preservedFrame.width, height: preservedFrame.height)
-        }
+        label.text = text
+        label.frame = CGRect(x: 0.0, y: 0.0, width: frame.width, height: frame.height)
         
         if let lineView = lineView {
-            lineView.frame = CGRect(x: 0.0, y: frame.width - 2.0, width: frame.height, height: 1.0)
+            lineView.frame = CGRect(x: frame.width - 2.0, y: 0.0, width: 1.0, height: frame.height)
         }
     }
 }
