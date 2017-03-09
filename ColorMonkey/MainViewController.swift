@@ -29,6 +29,14 @@ class MainViewController: UIViewController, ColorPaletteDelegate {
         show(color: UIColor(forRed: 0x14, green: 0xCB, blue: 0xCB))
     }
     
+    override var shouldAutorotate: Bool {
+        return false
+    }
+    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return UIInterfaceOrientationMask.portrait
+    }
+    
     
     // MARK:    Methods...
     
