@@ -67,10 +67,6 @@
                                     <action selector="hslSliderValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="mpL-fe-IcD"/>
                                 </connections>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l4L-G2-3Ye">
-                                <rect key="frame" x="40" y="510" width="227" height="147"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XAo-0S-hIt">
                                 <rect key="frame" x="275" y="510" width="84" height="147"/>
                                 <constraints>
@@ -102,6 +98,12 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="text" value="HSL"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Quf-g2-6Z8">
+                                <rect key="frame" x="40" y="510" width="227" height="147"/>
+                                <connections>
+                                    <action selector="colorTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="J5u-nw-qBV"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -110,14 +112,16 @@
                             <constraint firstItem="oON-gz-E5L" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="3GZ-Q2-XI8"/>
                             <constraint firstItem="fyI-2I-J40" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="24" id="6Gg-6G-87S"/>
                             <constraint firstItem="oON-gz-E5L" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-4" id="8h6-ho-cxW"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="l4L-G2-3Ye" secondAttribute="bottom" constant="10" id="FBK-lN-465"/>
+                            <constraint firstItem="XAo-0S-hIt" firstAttribute="leading" secondItem="Quf-g2-6Z8" secondAttribute="trailing" constant="8" id="DMB-Wd-2as"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="XAo-0S-hIt" secondAttribute="bottom" constant="10" id="GS0-U6-K0Q"/>
                             <constraint firstItem="l4s-3h-oor" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="H7n-B1-wgL"/>
                             <constraint firstItem="XAo-0S-hIt" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="Iry-bC-vPU"/>
                             <constraint firstItem="fyI-2I-J40" firstAttribute="top" secondItem="l4s-3h-oor" secondAttribute="bottom" constant="8" id="Lh9-hG-G7U"/>
-                            <constraint firstItem="l4L-G2-3Ye" firstAttribute="top" secondItem="e8C-pN-GIH" secondAttribute="bottom" constant="13" id="OHr-73-cE8"/>
+                            <constraint firstItem="Quf-g2-6Z8" firstAttribute="top" secondItem="e8C-pN-GIH" secondAttribute="bottom" constant="13" id="M48-L6-UHg"/>
                             <constraint firstItem="lNm-TS-7DL" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="P0R-H3-eZI"/>
+                            <constraint firstItem="Quf-g2-6Z8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="24" id="Ran-ea-Vjq"/>
                             <constraint firstItem="e8C-pN-GIH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="24" id="bqW-8D-zLT"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Quf-g2-6Z8" secondAttribute="bottom" constant="10" id="cVv-wm-ke3"/>
                             <constraint firstItem="XAo-0S-hIt" firstAttribute="top" secondItem="e8C-pN-GIH" secondAttribute="bottom" constant="13" id="ctc-WG-MAe"/>
                             <constraint firstItem="jFB-fI-jwz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="12" id="daD-37-owY"/>
                             <constraint firstItem="e8C-pN-GIH" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="l5O-tr-V9T"/>
@@ -126,12 +130,10 @@
                             <constraint firstItem="lNm-TS-7DL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="24" id="oSC-jc-pDv"/>
                             <constraint firstItem="jFB-fI-jwz" firstAttribute="top" secondItem="oON-gz-E5L" secondAttribute="bottom" constant="15" id="p5U-5M-tYy"/>
                             <constraint firstItem="l4s-3h-oor" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="24" id="rD2-jA-Sdp"/>
-                            <constraint firstItem="l4L-G2-3Ye" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="24" id="tfI-HZ-vLa"/>
-                            <constraint firstItem="XAo-0S-hIt" firstAttribute="leading" secondItem="l4L-G2-3Ye" secondAttribute="trailing" constant="8" id="wdw-pU-Tle"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="colorView" destination="l4L-G2-3Ye" id="m6K-IC-DF1"/>
+                        <outlet property="colorButton" destination="Quf-g2-6Z8" id="2V9-oa-dn4"/>
                         <outlet property="complementButton" destination="XAo-0S-hIt" id="YbU-14-AMF"/>
                         <outlet property="hslPicker" destination="lNm-TS-7DL" id="cyn-OK-bWQ"/>
                         <outlet property="hslSlider" destination="e8C-pN-GIH" id="V6v-Nd-PhK"/>
