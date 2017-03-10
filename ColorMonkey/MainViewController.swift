@@ -55,6 +55,19 @@ class MainViewController: UIViewController, ColorPaletteDelegate {
     }
     
     
+    // MARK:    Navigation...
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? PaletteViewController {
+            destination.color = colorButton.backgroundColor
+        }
+    }
+
+    @IBAction func unwindToMain(segue: UIStoryboardSegue) {
+        print("MainViewController.\(#function)")
+    }
+
+    
     // MARK:    Events...
     
     @IBAction func rgbValueChanged(_ sender: RgbColorPicker) {
@@ -71,10 +84,6 @@ class MainViewController: UIViewController, ColorPaletteDelegate {
     
     @IBAction func hslSliderValueChanged(_ sender: HslColorSlider) {
         show(color: sender.selectedColor)
-    }
-    
-    @IBAction func colorTouchUpInside(_ sender: UIButton) {
-        print("MainViewController.\(#function)")
     }
     
     @IBAction func complementTouchUpInside(_ sender: UIButton) {
