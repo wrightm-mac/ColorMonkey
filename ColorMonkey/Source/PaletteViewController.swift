@@ -19,6 +19,12 @@ class PaletteViewController: UIViewController, UITableViewDataSource, UITabBarDe
         }
     }
     
+    let sections: [String] = [
+        "Saturation",
+        "Brightness",
+        "Standard"
+    ]
+    
     
     // MARK:    Initialisers & deinitialisers...
     
@@ -41,10 +47,14 @@ class PaletteViewController: UIViewController, UITableViewDataSource, UITabBarDe
     
     
     // MARK:    'UITableViewDataSource'...
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return sections.count
+    }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        return 0
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -53,12 +63,8 @@ class PaletteViewController: UIViewController, UITableViewDataSource, UITabBarDe
         return cell
     }
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return nil
+        return sections[section]
     }
     
     
