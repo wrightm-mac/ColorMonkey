@@ -22,13 +22,7 @@ open class ColorPalette: UIControl, UICollectionViewDataSource, UICollectionView
     
     @IBInspectable open var cellSize: CGSize = CGSize(width: 60.0, height: 60.0)
     
-    @IBInspectable open var scrollDirection: UICollectionViewScrollDirection = .vertical {
-        didSet {
-            let layout = UICollectionViewFlowLayout()
-            layout.scrollDirection = scrollDirection
-            view.collectionViewLayout = layout
-        }
-    }
+    @IBInspectable open var scrollDirection: UICollectionViewScrollDirection = .vertical
     
     @IBInspectable open var delegate: ColorPaletteDelegate? = nil
     
@@ -65,6 +59,10 @@ open class ColorPalette: UIControl, UICollectionViewDataSource, UICollectionView
         super.layoutSubviews()
         
         view.register(getNib("ColorPaletteCell"), forCellWithReuseIdentifier: "PaletteCell")
+        
+        let flowLayout = UICollectionViewFlowLayout()
+        flowLayout.scrollDirection = scrollDirection
+        view.collectionViewLayout = flowLayout
     }
     
     

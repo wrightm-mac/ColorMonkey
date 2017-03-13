@@ -13,7 +13,7 @@ class PaletteViewCell: UITableViewCell {
 
     // MARK:    Fields...
     
-    var view: UIView? = nil
+    var colorPalette: ColorPalette? = nil
     
     
     // MARK:    Overrides...
@@ -25,14 +25,15 @@ class PaletteViewCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        guard let view = view else {
+        guard let colorPalette = colorPalette else {
             return
         }
         
-        view.frame = CGRect(x: 0.0, y: 0.0, width: frame.width, height: frame.height)
+        colorPalette.frame = CGRect(x: 0.0, y: 0.0, width: frame.width, height: frame.height)
+        colorPalette.scrollDirection = .horizontal
         
         removeSubviews()
-        addSubview(view)
+        addSubview(colorPalette)
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

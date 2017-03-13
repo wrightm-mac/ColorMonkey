@@ -40,7 +40,7 @@ public enum PaletteViewCellType: String {
         }
     }
     
-    public var view: UIView {
+    public var view: ColorPalette {
         switch self {
             case .saturation: return StandardPalette()
             case .brightness: return StandardPalette()
