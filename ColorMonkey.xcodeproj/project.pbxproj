@@ -22,6 +22,8 @@
 		24852B181E6DAAE500E021D0 /* RgbColorSlider.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24852B171E6DAAE500E021D0 /* RgbColorSlider.xib */; };
 		24A08C751E76D9B400CAD37A /* PaletteViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A08C741E76D9B400CAD37A /* PaletteViewCell.swift */; };
 		24A08C771E76DA8F00CAD37A /* PaletteViewCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A08C761E76DA8F00CAD37A /* PaletteViewCellType.swift */; };
+		24A08C791E76E53F00CAD37A /* SaturationPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A08C781E76E53F00CAD37A /* SaturationPalette.swift */; };
+		24A08C7B1E76E74800CAD37A /* BrightnessPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A08C7A1E76E74800CAD37A /* BrightnessPalette.swift */; };
 		24A4B6DB1E67161000ED2751 /* DoubleExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A4B6DA1E67161000ED2751 /* DoubleExtensions.swift */; };
 		24A4B6DD1E671D1900ED2751 /* ColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A4B6DC1E671D1900ED2751 /* ColorPalette.swift */; };
 		24A4B6DF1E671D4E00ED2751 /* ColorPaletteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A4B6DE1E671D4E00ED2751 /* ColorPaletteView.swift */; };
@@ -60,6 +62,8 @@
 		24852B171E6DAAE500E021D0 /* RgbColorSlider.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RgbColorSlider.xib; path = Source/RgbColorSlider.xib; sourceTree = "<group>"; };
 		24A08C741E76D9B400CAD37A /* PaletteViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PaletteViewCell.swift; path = Source/PaletteViewCell.swift; sourceTree = "<group>"; };
 		24A08C761E76DA8F00CAD37A /* PaletteViewCellType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PaletteViewCellType.swift; path = Source/PaletteViewCellType.swift; sourceTree = "<group>"; };
+		24A08C781E76E53F00CAD37A /* SaturationPalette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SaturationPalette.swift; path = Source/SaturationPalette.swift; sourceTree = "<group>"; };
+		24A08C7A1E76E74800CAD37A /* BrightnessPalette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BrightnessPalette.swift; path = Source/BrightnessPalette.swift; sourceTree = "<group>"; };
 		24A4B6DA1E67161000ED2751 /* DoubleExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DoubleExtensions.swift; path = Source/DoubleExtensions.swift; sourceTree = "<group>"; };
 		24A4B6DC1E671D1900ED2751 /* ColorPalette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorPalette.swift; path = Source/ColorPalette.swift; sourceTree = "<group>"; };
 		24A4B6DE1E671D4E00ED2751 /* ColorPaletteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorPaletteView.swift; path = Source/ColorPaletteView.swift; sourceTree = "<group>"; };
@@ -138,6 +142,7 @@
 		24BD633C1E65A1E8008454B0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				24A08C7A1E76E74800CAD37A /* BrightnessPalette.swift */,
 				24A4B6DC1E671D1900ED2751 /* ColorPalette.swift */,
 				24A4B6E01E671DB400ED2751 /* ColorPalette.xib */,
 				24A4B6DE1E671D4E00ED2751 /* ColorPaletteView.swift */,
@@ -150,16 +155,17 @@
 				2430ED8F1E6EC9F6006F2889 /* HslColorSlider.swift */,
 				2430ED911E6ECA2A006F2889 /* HslColorSlider.xib */,
 				2430ED931E6ECA6C006F2889 /* HslColorSliderView.swift */,
+				24A08C741E76D9B400CAD37A /* PaletteViewCell.swift */,
+				24A08C761E76DA8F00CAD37A /* PaletteViewCellType.swift */,
+				2479CB1E1E6F01F700C85A5A /* RotatingLabel.swift */,
 				241331301E686F5800E96B11 /* RgbColorPicker.swift */,
 				241331341E686FDD00E96B11 /* RgbColorPicker.xib */,
 				241331321E686FAE00E96B11 /* RgbColorPickerView.swift */,
 				24852B131E6DAA3600E021D0 /* RgbColorSlider.swift */,
 				24852B171E6DAAE500E021D0 /* RgbColorSlider.xib */,
 				24852B151E6DAACA00E021D0 /* RgbColorSliderView.swift */,
+				24A08C781E76E53F00CAD37A /* SaturationPalette.swift */,
 				24F349C31E6C630F0080A172 /* StandardPalette.swift */,
-				2479CB1E1E6F01F700C85A5A /* RotatingLabel.swift */,
-				24A08C741E76D9B400CAD37A /* PaletteViewCell.swift */,
-				24A08C761E76DA8F00CAD37A /* PaletteViewCellType.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -275,6 +281,7 @@
 			files = (
 				24BD634D1E65BEFA008454B0 /* UInt8Extensions.swift in Sources */,
 				24BD632C1E659CC8008454B0 /* MainViewController.swift in Sources */,
+				24A08C7B1E76E74800CAD37A /* BrightnessPalette.swift in Sources */,
 				24F349C41E6C630F0080A172 /* StandardPalette.swift in Sources */,
 				2479CB1F1E6F01F700C85A5A /* RotatingLabel.swift in Sources */,
 				24110A411E72EF2400F8613F /* PaletteViewController.swift in Sources */,
@@ -299,6 +306,7 @@
 				24BD63451E65A3EA008454B0 /* HslColorPicker.swift in Sources */,
 				24A4B6DB1E67161000ED2751 /* DoubleExtensions.swift in Sources */,
 				24A4B6DD1E671D1900ED2751 /* ColorPalette.swift in Sources */,
+				24A08C791E76E53F00CAD37A /* SaturationPalette.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

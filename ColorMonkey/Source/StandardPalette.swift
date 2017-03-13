@@ -60,8 +60,6 @@ open class StandardPalette: ColorPalette {
     // MARK:    Methods...
     
     private func createColors() {
-        print("StandardPalette.\(#function)")
-        
         var newColors = [UIColor]()
         
         let stepIncrement: Float = 0.99 / Float(stepCount - 1)

@@ -190,7 +190,7 @@ extension UIColor {
      Array of varying brightness for the color.
     */
     public var brightnessRange: [UIColor]? {
-        let numberOfSteps = 16.0
+        let numberOfSteps = 32.0
         let stepIncrement = 1.0 / numberOfSteps
         
         guard let hsl = hsl else {

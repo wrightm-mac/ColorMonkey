@@ -60,7 +60,18 @@ class PaletteViewController: UIViewController, UITableViewDataSource, UITableVie
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PaletteCell", for: indexPath) as! PaletteViewCell
-        cell.colorPalette = sections[indexPath.section].view
+        
+        let paletteType = sections[indexPath.section]
+        let palette = paletteType.view
+        
+        cell.colorPalette = palette
+
+        if let saturationPalette = palette as? SaturationPalette {
+            saturationPalette.color = color
+        }
+        else if let brightnessPalette = palette as? BrightnessPalette {
+            brightnessPalette.color = color
+        }
         
         return cell
     }
