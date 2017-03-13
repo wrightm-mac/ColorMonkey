@@ -9,7 +9,7 @@
 import UIKit
 
 
-class PaletteViewController: UIViewController, UITableViewDataSource, UITabBarDelegate {
+class PaletteViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     // MARK:    Fields...
     
@@ -19,10 +19,10 @@ class PaletteViewController: UIViewController, UITableViewDataSource, UITabBarDe
         }
     }
     
-    let sections: [String] = [
-        "Saturation",
-        "Brightness",
-        "Standard"
+    let sections: [PaletteViewCellType] = [
+        .saturation,
+        .brightness,
+        .standard
     ]
     
     
@@ -43,6 +43,7 @@ class PaletteViewController: UIViewController, UITableViewDataSource, UITabBarDe
     // MARK:    Navigation...
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print("PaletteViewController.\(#function)")
     }
     
     
@@ -58,19 +59,19 @@ class PaletteViewController: UIViewController, UITableViewDataSource, UITabBarDe
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "PaletteCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PaletteCell", for: indexPath) as! PaletteViewCell
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return sections[section]
+        return sections[section].rawValue
     }
     
     
     // MARK:    'UITableViewDelegate'...
     
-    func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
-        print("PaletteViewController.\(#function)")
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return sections[indexPath.section].size.cgfloat
     }
 }
