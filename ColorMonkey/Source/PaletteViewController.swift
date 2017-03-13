@@ -43,10 +43,8 @@ class PaletteViewController: UIViewController, UITableViewDataSource, UITableVie
     // MARK:    Navigation...
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        print("PaletteViewController.\(#function)")
-        
-        if let destination = segue.destination as? MainViewController {
-            destination.show(color: sender as! UIColor)
+        if let destination = segue.destination as? MainViewController, let color = sender as? UIColor {
+            destination.show(color: color)
         }
     }
     
@@ -81,8 +79,15 @@ class PaletteViewController: UIViewController, UITableViewDataSource, UITableVie
         return cell
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return sections[section].rawValue
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 44.0
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerLabel = BubbleLabel()
+        headerLabel.text = sections[section].rawValue
+        
+        return headerLabel
     }
     
     

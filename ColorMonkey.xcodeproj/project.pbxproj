@@ -24,6 +24,9 @@
 		24A08C771E76DA8F00CAD37A /* PaletteViewCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A08C761E76DA8F00CAD37A /* PaletteViewCellType.swift */; };
 		24A08C791E76E53F00CAD37A /* SaturationPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A08C781E76E53F00CAD37A /* SaturationPalette.swift */; };
 		24A08C7B1E76E74800CAD37A /* BrightnessPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A08C7A1E76E74800CAD37A /* BrightnessPalette.swift */; };
+		24A08C7D1E76EB3700CAD37A /* BubbleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A08C7C1E76EB3700CAD37A /* BubbleLabel.swift */; };
+		24A08C7F1E76EDBB00CAD37A /* BubbleLabel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24A08C7E1E76EDBB00CAD37A /* BubbleLabel.xib */; };
+		24A08C811E76EE5900CAD37A /* BubbleLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A08C801E76EE5900CAD37A /* BubbleLabelView.swift */; };
 		24A4B6DB1E67161000ED2751 /* DoubleExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A4B6DA1E67161000ED2751 /* DoubleExtensions.swift */; };
 		24A4B6DD1E671D1900ED2751 /* ColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A4B6DC1E671D1900ED2751 /* ColorPalette.swift */; };
 		24A4B6DF1E671D4E00ED2751 /* ColorPaletteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A4B6DE1E671D4E00ED2751 /* ColorPaletteView.swift */; };
@@ -64,6 +67,9 @@
 		24A08C761E76DA8F00CAD37A /* PaletteViewCellType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PaletteViewCellType.swift; path = Source/PaletteViewCellType.swift; sourceTree = "<group>"; };
 		24A08C781E76E53F00CAD37A /* SaturationPalette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SaturationPalette.swift; path = Source/SaturationPalette.swift; sourceTree = "<group>"; };
 		24A08C7A1E76E74800CAD37A /* BrightnessPalette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BrightnessPalette.swift; path = Source/BrightnessPalette.swift; sourceTree = "<group>"; };
+		24A08C7C1E76EB3700CAD37A /* BubbleLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BubbleLabel.swift; path = Source/BubbleLabel.swift; sourceTree = "<group>"; };
+		24A08C7E1E76EDBB00CAD37A /* BubbleLabel.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BubbleLabel.xib; path = Source/BubbleLabel.xib; sourceTree = "<group>"; };
+		24A08C801E76EE5900CAD37A /* BubbleLabelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BubbleLabelView.swift; path = Source/BubbleLabelView.swift; sourceTree = "<group>"; };
 		24A4B6DA1E67161000ED2751 /* DoubleExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DoubleExtensions.swift; path = Source/DoubleExtensions.swift; sourceTree = "<group>"; };
 		24A4B6DC1E671D1900ED2751 /* ColorPalette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorPalette.swift; path = Source/ColorPalette.swift; sourceTree = "<group>"; };
 		24A4B6DE1E671D4E00ED2751 /* ColorPaletteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorPaletteView.swift; path = Source/ColorPaletteView.swift; sourceTree = "<group>"; };
@@ -143,6 +149,9 @@
 			isa = PBXGroup;
 			children = (
 				24A08C7A1E76E74800CAD37A /* BrightnessPalette.swift */,
+				24A08C7C1E76EB3700CAD37A /* BubbleLabel.swift */,
+				24A08C7E1E76EDBB00CAD37A /* BubbleLabel.xib */,
+				24A08C801E76EE5900CAD37A /* BubbleLabelView.swift */,
 				24A4B6DC1E671D1900ED2751 /* ColorPalette.swift */,
 				24A4B6E01E671DB400ED2751 /* ColorPalette.xib */,
 				24A4B6DE1E671D4E00ED2751 /* ColorPaletteView.swift */,
@@ -268,6 +277,7 @@
 				24852B181E6DAAE500E021D0 /* RgbColorSlider.xib in Resources */,
 				24A4B6E31E67205C00ED2751 /* ColorPaletteCell.xib in Resources */,
 				24BD63311E659CC9008454B0 /* Assets.xcassets in Resources */,
+				24A08C7F1E76EDBB00CAD37A /* BubbleLabel.xib in Resources */,
 				24BD632F1E659CC9008454B0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -299,8 +309,10 @@
 				2430ED901E6EC9F6006F2889 /* HslColorSlider.swift in Sources */,
 				24BD63411E65A261008454B0 /* UIViewExtensions.swift in Sources */,
 				24A08C771E76DA8F00CAD37A /* PaletteViewCellType.swift in Sources */,
+				24A08C7D1E76EB3700CAD37A /* BubbleLabel.swift in Sources */,
 				24BD63491E65A4CA008454B0 /* HslColorPickerView.swift in Sources */,
 				24BD632A1E659CC8008454B0 /* AppDelegate.swift in Sources */,
+				24A08C811E76EE5900CAD37A /* BubbleLabelView.swift in Sources */,
 				24A4B6DF1E671D4E00ED2751 /* ColorPaletteView.swift in Sources */,
 				24BD63431E65A2B7008454B0 /* UIColorExtensions.swift in Sources */,
 				24BD63451E65A3EA008454B0 /* HslColorPicker.swift in Sources */,
