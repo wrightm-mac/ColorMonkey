@@ -61,14 +61,10 @@ open class ColorPalette: UIControl, UICollectionViewDataSource, UICollectionView
     
     // MARK:    Overrides...
     
-    open override func awakeFromNib() {
-        super.awakeFromNib()
-        
-        view.register(getNib("ColorPaletteCell"), forCellWithReuseIdentifier: "PaletteCell")
-    }
-    
     open override func layoutSubviews() {
         super.layoutSubviews()
+        
+        view.register(getNib("ColorPaletteCell"), forCellWithReuseIdentifier: "PaletteCell")
     }
     
     

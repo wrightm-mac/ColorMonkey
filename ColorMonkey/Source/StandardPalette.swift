@@ -50,16 +50,18 @@ open class StandardPalette: ColorPalette {
 
     // MARK:    Overrides...
     
-    override open func awakeFromNib() {
-        super.awakeFromNib()
+    override open func layoutSubviews() {
+        super.layoutSubviews()
         
         createColors()
     }
     
-    
+
     // MARK:    Methods...
     
     private func createColors() {
+        print("StandardPalette.\(#function)")
+        
         var newColors = [UIColor]()
         
         let stepIncrement: Float = 0.99 / Float(stepCount - 1)

@@ -12,6 +12,13 @@ import UIKit
 
 
 public extension UIView {
+
+    // MARK:    View management...
+    
+    public func removeSubviews() {
+        subviews.forEach { view in view.removeFromSuperview() }
+    }
+
     
     // MARK:    Nib...
     

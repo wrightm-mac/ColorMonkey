@@ -39,4 +39,12 @@ public enum PaletteViewCellType: String {
             case .standard: return .large
         }
     }
+    
+    public var view: UIView {
+        switch self {
+            case .saturation: return StandardPalette()
+            case .brightness: return StandardPalette()
+            case .standard: return StandardPalette()
+        }
+    }
 }
