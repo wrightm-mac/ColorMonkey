@@ -9,7 +9,7 @@
 import UIKit
 
 
-class PaletteViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class PaletteViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, ColorPaletteDelegate {
 
     // MARK:    Fields...
     
@@ -44,6 +44,10 @@ class PaletteViewController: UIViewController, UITableViewDataSource, UITableVie
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         print("PaletteViewController.\(#function)")
+        
+        if let destination = segue.destination as? MainViewController {
+            destination.show(color: sender as! UIColor)
+        }
     }
     
     
@@ -63,8 +67,6 @@ class PaletteViewController: UIViewController, UITableViewDataSource, UITableVie
         
         let paletteType = sections[indexPath.section]
         let palette = paletteType.view
-        
-        cell.colorPalette = palette
 
         if let saturationPalette = palette as? SaturationPalette {
             saturationPalette.color = color
@@ -72,6 +74,9 @@ class PaletteViewController: UIViewController, UITableViewDataSource, UITableVie
         else if let brightnessPalette = palette as? BrightnessPalette {
             brightnessPalette.color = color
         }
+        
+        palette.delegate = self
+        cell.colorPalette = palette
         
         return cell
     }
@@ -85,5 +90,12 @@ class PaletteViewController: UIViewController, UITableViewDataSource, UITableVie
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return sections[indexPath.section].size.cgfloat
+    }
+    
+    
+    // MARK:    'ColorPaletteDelegate'...
+    
+    func colorPalette(_ colorPalette: ColorPalette, selectedColor: UIColor) {
+        performSegue(withIdentifier: "UnwindToMain", sender: selectedColor)
     }
 }

@@ -40,7 +40,7 @@ class MainViewController: UIViewController, ColorPaletteDelegate {
     
     // MARK:    Methods...
     
-    private func show(color: UIColor) {
+    func show(color: UIColor) {
         color.debugPrint()
         
         colorButton.backgroundColor = color
