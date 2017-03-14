@@ -63,7 +63,7 @@ open class ColorPalette: UIControl, UICollectionViewDataSource, UICollectionView
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.scrollDirection = scrollDirection
         
-        flowLayout.sectionInset = UIEdgeInsetsMake(6.0, 4.0, 4.0, 6.0)
+        flowLayout.sectionInset = UIEdgeInsetsMake(3.0, 4.0, 7.0, 6.0)
         
         view.collectionViewLayout = flowLayout
     }

@@ -16,9 +16,11 @@ open class BubbleLabel: UIView {
     
     @IBInspectable open var text: String? = nil
     
-    @IBInspectable open var borderColor: UIColor = .gray
+    @IBInspectable open var borderColor: UIColor = .black
     
-    @IBInspectable open var textColor: UIColor = .gray
+    @IBInspectable open var bubbleColor: UIColor = UIColor(color: 0xACE5EE)
+    
+    @IBInspectable open var textColor: UIColor = .black
     
     
     // MARK:    Fields...
@@ -52,8 +54,10 @@ open class BubbleLabel: UIView {
     open override func layoutSubviews() {
         super.layoutSubviews()
         
+        view.borderView.backgroundColor = bubbleColor
         view.borderView.applyBorder(cornerSize: .large, width: .medium, color: borderColor)
         
+        view.backgroundColor = backgroundColor
         view.textLabel.text = text
         view.textLabel.textColor = textColor
     }

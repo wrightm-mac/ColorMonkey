@@ -164,7 +164,7 @@
                                 </constraints>
                                 <items>
                                     <navigationItem id="qn3-sL-Bpy">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="T8Y-eG-Os9">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="T8Y-eG-Os9">
                                             <connections>
                                                 <segue destination="xbl-B2-XV6" kind="unwind" identifier="UnwindToMain" unwindAction="unwindToMainWithSegue:" id="2Lr-U9-Ofc"/>
                                             </connections>
@@ -180,7 +180,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Cvb-pJ-M84" id="1yO-Rd-MhI">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="74"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
