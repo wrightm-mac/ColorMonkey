@@ -1,8 +1,8 @@
 //
-//  SaturationPalette.swift
+//  HuePalette.swift
 //  ColorMonkey
 //
-//  Created by Michael Wright on 13/03/2017.
+//  Created by Michael Wright on 14/03/2017.
 //  Copyright © 2017 wrightm@mac.com. All rights reserved.
 //
 
@@ -11,7 +11,7 @@ import UIKit
 
 
 @IBDesignable
-open class SaturationPalette: ColorPalette, ColorPaletteVariation {
+open class HuePalette: ColorPalette, ColorPaletteVariation {
     
     // MARK:    Inspectables...
     
@@ -38,6 +38,6 @@ open class SaturationPalette: ColorPalette, ColorPaletteVariation {
     override open func layoutSubviews() {
         super.layoutSubviews()
         
-        colors = color?.saturationRange
+        colors = color?.hueRange
     }
 }

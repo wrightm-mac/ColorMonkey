@@ -33,8 +33,6 @@ class PaletteViewCell: UITableViewCell {
         colorPalette.scrollDirection = .horizontal
         colorPalette.cellSize = CGSize(width: 70.0, height: 70.0)
         
-        
-        
         removeSubviews()
         addSubview(colorPalette)
     }

@@ -11,7 +11,7 @@ import UIKit
 
 
 @IBDesignable
-open class BrightnessPalette: ColorPalette {
+open class BrightnessPalette: ColorPalette, ColorPaletteVariation {
     
     // MARK:    Inspectables...
     

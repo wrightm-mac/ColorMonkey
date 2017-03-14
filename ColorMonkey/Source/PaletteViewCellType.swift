@@ -28,20 +28,23 @@ public enum PaletteViewCellSize {
 
 public enum PaletteViewCellType: String {
     
+    case hue = "Hue"
     case saturation = "Saturation"
     case brightness = "Brightness"
     case standard = "Standard"
     
     public var size: PaletteViewCellSize {
         switch self {
+            case .hue: return .medium
             case .saturation: return .small
-            case .brightness: return .medium
+            case .brightness: return .small
             case .standard: return .large
         }
     }
     
     public var view: ColorPalette {
         switch self {
+        case .hue: return HuePalette()
             case .saturation: return SaturationPalette()
             case .brightness: return BrightnessPalette()
             case .standard: return StandardPalette()

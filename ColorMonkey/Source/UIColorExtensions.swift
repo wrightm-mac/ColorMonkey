@@ -162,11 +162,8 @@ extension UIColor {
         return UIColor(forRed: rgb.red, green: rgb.green.flip, blue: rgb.blue, alpha: rgb.alpha)
     }
     
-    /**
-        Array of saturations for the color.
-    */
-    public var saturationRange: [UIColor]? {
-        let numberOfSteps = 32.0
+    public var hueRange: [UIColor]? {
+        let numberOfSteps = 36.0
         let stepIncrement = 1.0 / numberOfSteps
         
         guard let hsl = hsl else {
@@ -175,11 +172,35 @@ extension UIColor {
         
         var variations = [UIColor]()
         
-        var saturationStep = 0.0001
-        while saturationStep <= 1.0 {
+        var hueStep = 0.9999
+        while hueStep >= 0.0 {
+            let hueColor = UIColor(hue: hueStep.cgfloat, saturation: hsl.saturation.cgfloat, brightness: hsl.brightness.cgfloat, alpha: hsl.alpha.cgfloat)
+            variations.append(hueColor)
+            hueStep -= stepIncrement
+            
+        }
+        
+        return variations
+    }
+    
+    /**
+        Array of saturations for the color.
+    */
+    public var saturationRange: [UIColor]? {
+        let numberOfSteps = 24.0
+        let stepIncrement = 1.0 / numberOfSteps
+        
+        guard let hsl = hsl else {
+            return nil
+        }
+        
+        var variations = [UIColor]()
+        
+        var saturationStep = 0.9999
+        while saturationStep >= 0.0 {
             let saturationColor = UIColor(hue: hsl.hue.cgfloat, saturation: saturationStep.cgfloat, brightness: hsl.brightness.cgfloat, alpha: hsl.alpha.cgfloat)
             variations.append(saturationColor)
-            saturationStep += stepIncrement
+            saturationStep -= stepIncrement
             
         }
         
@@ -190,7 +211,7 @@ extension UIColor {
      Array of varying brightness for the color.
     */
     public var brightnessRange: [UIColor]? {
-        let numberOfSteps = 32.0
+        let numberOfSteps = 24.0
         let stepIncrement = 1.0 / numberOfSteps
         
         guard let hsl = hsl else {
@@ -199,11 +220,11 @@ extension UIColor {
         
         var variations = [UIColor]()
         
-        var brightnessStep = 0.0001
-        while brightnessStep <= 1.0 {
+        var brightnessStep = 0.9999
+        while brightnessStep >= 0.0 {
             let brightnessColor = UIColor(hue: hsl.hue.cgfloat, saturation: hsl.saturation.cgfloat, brightness: brightnessStep.cgfloat, alpha: hsl.alpha.cgfloat)
             variations.append(brightnessColor)
-            brightnessStep += stepIncrement
+            brightnessStep -= stepIncrement
             
         }
         

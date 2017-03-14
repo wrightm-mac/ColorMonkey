@@ -20,6 +20,7 @@ class PaletteViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     let sections: [PaletteViewCellType] = [
+        .hue,
         .saturation,
         .brightness,
         .standard
@@ -66,11 +67,8 @@ class PaletteViewController: UIViewController, UITableViewDataSource, UITableVie
         let paletteType = sections[indexPath.section]
         let palette = paletteType.view
 
-        if let saturationPalette = palette as? SaturationPalette {
-            saturationPalette.color = color
-        }
-        else if let brightnessPalette = palette as? BrightnessPalette {
-            brightnessPalette.color = color
+        if var variationPalette = palette as? ColorPaletteVariation {
+             variationPalette.color = color
         }
         
         palette.delegate = self
