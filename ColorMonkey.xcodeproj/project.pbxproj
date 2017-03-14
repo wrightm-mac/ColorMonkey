@@ -169,6 +169,7 @@
 				2430ED8F1E6EC9F6006F2889 /* HslColorSlider.swift */,
 				2430ED911E6ECA2A006F2889 /* HslColorSlider.xib */,
 				2430ED931E6ECA6C006F2889 /* HslColorSliderView.swift */,
+				244362631E783D00003DA02F /* HuePalette.swift */,
 				24A08C741E76D9B400CAD37A /* PaletteViewCell.swift */,
 				24A08C761E76DA8F00CAD37A /* PaletteViewCellType.swift */,
 				2479CB1E1E6F01F700C85A5A /* RotatingLabel.swift */,
@@ -180,7 +181,6 @@
 				24852B151E6DAACA00E021D0 /* RgbColorSliderView.swift */,
 				24A08C781E76E53F00CAD37A /* SaturationPalette.swift */,
 				24F349C31E6C630F0080A172 /* StandardPalette.swift */,
-				244362631E783D00003DA02F /* HuePalette.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";

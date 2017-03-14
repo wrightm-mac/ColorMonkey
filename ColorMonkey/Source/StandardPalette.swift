@@ -14,7 +14,7 @@ open class StandardPalette: ColorPalette {
     
     // MARK:    Inspectables...
     
-    @IBInspectable open var stepCount: Int = 32 {
+    @IBInspectable open var stepCount: Int = 72 {
         didSet {
             reloadData()
         }
