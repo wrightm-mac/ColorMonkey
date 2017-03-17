@@ -42,8 +42,8 @@ open class BubbleLabel: UIView {
         view = addSubviewFromNib() as! BubbleLabelView
     }
     
-    public convenience init() {
-        self.init(frame: CGRect(x: 0.0, y: 0.0, width: 10.0, height: 10.0))
+    public init() {
+        super.init(frame: CGRect(x: 0.0, y: 0.0, width: 10.0, height: 10.0))
         
         view = addSubviewFromNib() as! BubbleLabelView
     }

@@ -45,8 +45,8 @@ open class HslColorPicker: UIControl, UIPickerViewDataSource, UIPickerViewDelega
         view = addSubviewFromNib() as! HslColorPickerView
     }
     
-    public convenience init() {
-        self.init(frame: CGRect(x: 0.0, y: 0.0, width: 10.0, height: 10.0))
+    public init() {
+        super.init(frame: CGRect(x: 0.0, y: 0.0, width: 10.0, height: 10.0))
         
         view = addSubviewFromNib() as! HslColorPickerView
     }

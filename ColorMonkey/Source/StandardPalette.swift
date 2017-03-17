@@ -43,8 +43,8 @@ open class StandardPalette: ColorPalette {
         super.init(frame: frame)
     }
     
-    public convenience init() {
-        self.init(frame: CGRect(x: 0.0, y: 0.0, width: 10.0, height: 10.0))
+    public override init() {
+        super.init(frame: CGRect(x: 0.0, y: 0.0, width: 10.0, height: 10.0))
     }
     
 
