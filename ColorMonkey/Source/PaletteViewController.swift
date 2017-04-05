@@ -15,7 +15,7 @@ class PaletteViewController: UIViewController, UITableViewDataSource, UITableVie
     
     var color: UIColor? = nil {
         didSet {
-            print("PaletteViewController.\(#function) color=\(color?.rgb)")
+            print("PaletteViewController.\(#function) color=\(String(describing: color?.rgb))")
         }
     }
     
